@@ -1,0 +1,156 @@
+1(a)...introduction to args
+#intro to *args
+# def total(a,b):
+#     return a+b
+# print(total(3,5))
+#-------------------
+# def total(a,b):
+#     return a+b
+# print(total(3,5,10,4)) #it gives an error to solve this problem use * operater
+#--------------------
+# def all_total(*args):
+#     print(args)
+#     print(type(args))
+# all_total(1,2,3,4,5,5)
+#---------------------
+def all_totall(*args):
+    total=0
+    for i in args:
+        total+=i
+    return total
+print(all_totall(1,2,3,4))
+
+output:/e/python_tutorial/excercise_8_args
+$ python intro_args.py
+10
+..............................................................................
+1(b)...#args with normal parameter
+# def multiply(*args): #parameter
+#     multiply=1
+#     for i in args:
+#         multiply *=i
+#     return multiply
+# print(multiply(1,2,3,4)) #argument
+#----------------------------
+# def multiply(num,*args): #parameter
+#     multiply=1
+#     # print(num)
+#     # print(args)
+#     for i in args:
+#         multiply *=i
+#     return multiply
+# print(multiply(2,2,3)) #(first 2 is not a part of args its a part of num)
+#-------------------------------------
+# def multiply(num,*args): #parameter #########
+#     multiply=1
+#     # print(num)
+#     # print(args)
+#     for i in args:
+#         multiply *=i
+#     return multiply
+# print(multiply())#it gives an error(you have to pass 1 argument bcoz u define parameter num)
+#---------------------------------
+def multiply(num1,num2,*args): #parameter
+    multiply=1
+    # print(num)
+    print(args)
+    for i in args:
+        multiply *=i
+    return multiply
+print(multiply(2,2,3,4)) #you pass 2 parameter hence u have to pass 2 argument
+
+output:/e/python_tutorial/excercise_8_args
+$ python args_with_normal_parameter.py
+(3, 4)
+12
+............................................................................................
+1(c)...#args_as_argument
+def multiply(*args):
+    multi=1 #([1,2,3,4])
+    print(args)
+    for i in args:
+        multi *=i
+    return multi
+num=[1,2,3,4]
+# num=(1,2,3,4) #you can use tuple instead of list
+print(multiply(*num)) # * use for unpack
+
+output:/e/python_tutorial/excercise_8_args
+$ python args_as_argument.py
+(1, 2, 3, 4)
+24
+.....................................................................................
+1(d)...#how to check list is empty or not
+list1=[1,2,3,456]
+if list1:
+# if len(list1)>0:
+    print("list not empty")
+else:
+    print("empty")
+#------------------------------------
+def to_power(num,*args):
+    if args:
+        return [i**num for i in args]
+    else:
+        return "u didnt pass any argument"
+num=[1,2,3]
+print(to_power(3,*num))
+# print(to_power(3,*[1,4,5]))
+
+output:/e/python_tutorial/excercise_8_args
+$ python find_cube_using_args_list_comprehension.py
+list not empty
+[1, 64, 125]
+.........................................................................................
+1(e)....#kwargs/keyword argument/double star operator
+# def func(**kwargs): #*args gather argument in to tuple
+#     print(kwargs)   #**kwargs gather argument in dictionary
+#     for k,v in kwargs.items():
+#         print(f"{k} : {v}")
+# func(first_name='harshit',last_name='vaishista')
+#-------------------------------
+# def func(name,**kwargs): #*args gather argument in to tuple
+#     print(kwargs)   #**kwargs gather argument in dictionary
+#     for k,v in kwargs.items():
+#         print(f"{k} : {v}")
+# func('pooja',first_name='harshit',last_name='vaishista')
+#-------------------------------
+#dictionary unpacking
+def func(**kwargs):
+    print(kwargs)
+    for k,v in kwargs.items():
+        print(f"{k} : {v}") 
+dd={'name':'pooja','age':24}
+func(**dd)
+.....................................................................................
+1(f)....#PADK=(parameter,args,default_parameter,kwargs)
+#introduction to all type of parameter
+# def func(a): #normal parameter
+# def func(name='unknown',age=24): #default parameter
+#     print(name,age)
+# func()
+#----------------------------------
+#sequence of all 4 parameters
+#1)normal parameter
+#2)*args
+#3)default parameter
+#4)**kwargs
+def func(name,*args,last_name='unknown',**kwargs): #plz maintain this order
+    print(name)
+    print(args)
+    print(last_name)
+    print(kwargs)
+func('harshit', 1,2,3,4,4,5,6,a=2,b=6,c=8,d = 9)
+# func('harshit',1,2,3,a=1,b=2)
+#--------------------------
+# def func2(name,last_name='unknown'):#1paramater..2default parameter (plz maintain order)
+
+
+output:/e/python_tutorial/excercise_8_args
+$ python func_with_all_type_of_parameter.py
+harshit
+(1, 2, 3, 4, 4, 5, 6)
+unknown
+{'a': 2, 'b': 6, 'c': 8, 'd': 9}
+.........................................................................................
+1(g)...

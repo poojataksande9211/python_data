@@ -1,0 +1,260 @@
+1(a)...#intro to decorators
+# def square(a):
+#     return a**2
+# s=square(7)
+# print(s)
+#------------------
+def square(a):
+    return a**2
+s=square #here we assing function to variable s....yahape func ko call nahi kar rahe...
+print(s(7))  #s kam karega function ki tarah
+print(s.__name__) #it will print name of s
+print(s)  #both s and square at same laocation
+print(square)
+
+output:/e/python_tutorial/excercise_11_decorators
+$ python decorators_intro.py
+49
+square
+<function square at 0x004FD2B0>
+<function square at 0x004FD2B0>
+....................................................................
+1(b)...#pass_func_as_argument
+def square(a):
+    return a**2
+l=[1,2,3,4,5]
+# print(list(map(square,l)))
+# print(list(map(lambda a:a**2 ,l)))
+#----------------------
+def my_map(func,l): #self define map function
+    new_list=[]
+    for item in l:
+        new_list.append(func(item))
+    return new_list
+# l=[1,2,3,4,5]
+# print(my_map(square,l))
+print(my_map(lambda a:a**3,l))
+#.......................................
+def my_map2(func,l):
+    return[func(item) for item in l]
+print(my_map2(lambda a:a**2,l))
+
+
+output: /e/python_tutorial/excercise_11_decorators
+$ python pass_func_as_argument.py
+[1, 8, 27, 64, 125]
+[1, 4, 9, 16, 25]
+.................................................................................
+1(c)...#function_insight_function
+# def outer_func():
+#     def inner_func():
+#         print('insight inner function')
+#     return inner_func
+# var=outer_func()
+# var()
+#--------------------------
+def outer_func(msg):
+    def inner_func():
+        print(f"message is:{msg}")
+    return inner_func
+var=outer_func("hi this is ooonaxcm")
+var()
+
+output:/e/python_tutorial/excercise_11_decorators
+$ python func_insight_func.py
+message is:hi this is ooonaxcm
+...................................................................................
+1(d)...#function returning function(closure) practice
+def to_power(x):
+    def calculate_power(n):
+        return n**x
+    return calculate_power
+cube=to_power(3)
+print(cube(4))
+
+square=to_power(2)
+print(square(3))
+
+output:/e/python_tutorial/excercise_11_decorators
+$ python  closures_practice.py
+64
+..........................................................................................
+1(e)...#decorators intro(inhance the functionality of other function)
+#decorators is a function which increse the functionality of other function
+# def decorator_function(any_func):
+#     def wraper_func():
+#         print("this is awesome function")
+#         any_func()
+#     return wraper_func
+# def func1():
+#     print("this is function1")
+# def func2():
+#     print("this is function 2")
+# var=decorator_function(func2)
+# var()
+#---------------------------------------
+#@ symbol use for the decorators
+def decorator_function(any_func):
+    def wraper_func():
+        print("this is awesome function")
+        any_func()
+    return wraper_func
+@decorator_function #this is shortcut
+def func1():
+    print("this is function1")
+func1()
+@decorator_function
+def func2():
+    print("this is function 2")
+func2()
+
+output:/e/python_tutorial/excercise_11_decorators
+$ python decorotors_intro2.py
+this is awesome function
+this is function1
+this is awesome function
+this is function 2
+.........................................................................................
+1(f)...#decorators_part_2
+def decorators_func(any_func):
+    def wrapper_fun(*args,**kwargs):
+        print("this is awesome function")
+        return any_func(*args,**kwargs)
+    return wrapper_fun
+@decorators_func
+def func_1(a):
+    print(f"this is function with argument {a}")
+func_1(7)
+@decorators_func
+def add_fun(a,b):
+    return a+b
+print(add_fun(2,4)) #it will not print output...print none ....change return any_func
+
+output:/e/python_tutorial/excercise_11_decorators 
+$ python decorators_part_2.py
+this is awesome function
+this is function with argument 7
+this is awesome function
+6
+...........................................................................................
+1(g)...#decoratos_part_3
+from functools import wraps
+def decorator_func(any_func):
+    @wraps(any_func)
+    def wrapper_func(*args,**kwargs):
+        "this is wrapper func"
+        print("this is awesome func")
+        return any_func(*args,**kwargs)
+    return wrapper_func
+@decorator_func
+def add(a,b):
+    "this is add func"
+    return a+b
+print(add.__doc__) #without function tool import wrap it cant be possible
+print(add.__name__)
+
+output:/e/python_tutorial/excercise_11_decorators
+$ python decorators_part_3.py
+this is add func
+add
+................................................................................................
+1(h)...#decorators_practice
+from functools import wraps
+def print_data_decorators(any_func):
+    @wraps(any_func)
+    def wraper_func(*args,**kwargs):
+        print(f"you are calling {any_func.__name__}")
+        print(f"{any_func.__doc__}")
+        return any_func(*args,**kwargs)
+    return wraper_func
+    
+@print_data_decorators
+def add(a,b):
+    """"this function takes 3 numbers as argument and return their sum"""
+    return a+b
+print(add(5,5))
+
+output:/e/python_tutorial/excercise_11_decorators
+$ python decorators_practice.py
+you are calling add
+"this function takes 3 numbers as argument and return their sum
+10
+.............................................................................................
+1(i)...from functools import wraps
+import time
+def calculate_time(any_func):
+    @wraps(any_func)
+    def wraper_func(*args,**kwargs):
+        print(f"Executing.....{any_func.__name__}")
+        t1=time.time()
+        return_value=any_func(*args,**kwargs)
+        t2=time.time()
+        total_time=t2-t1
+        print(f"this func took {total_time} seconds")
+        return return_value
+    return wraper_func
+@calculate_time
+def square_finder(n):
+    return[i**2 for i in range(1,n+1)]
+square_finder(10000)
+
+output:/e/python_tutorial/excercise_11_decorators
+$ python decorator_example_1.py
+Executing.....square_finder
+this func took 0.012000560760498047 seconds
+...............................................................................................
+1(j)...#decorator_practice_2
+from functools import wraps
+def only_int_allow(any_func):
+    @wraps(any_func)
+    def wraper_func(*args,**kwargs):
+        if all ([type(i)==int for i in args]): #represent all commented code in ane line
+            return any_func(*args,**kwargs)
+        print("invalid argument")
+        # data_type=[]
+        # for i in args:
+        #     data_type.append(type(i)==int)
+        # if all(data_type):
+        #     return any_func(*args,**kwargs)
+        # else:
+        #     print("invalid argument")
+    return wraper_func
+
+@only_int_allow
+def add_all(*args): 
+    total=0
+    for i in args:
+        total=total+i
+    return total
+# print(add_all(1,2,3,4,5,6,[1,2,3]))
+print(add_all(1,2,3,4,5,6))
+
+output:/e/python_tutorial/excercise_11_decorators
+$ python decorator_practice_2.py
+21
+........................................................................................
+1(k)...#dcorator with argument
+from functools import wraps
+def only_data_type_allowe(data_type):
+    def decorator(func):
+        @wraps(func)
+        def wraper_func(*args,**kwargs):
+            if all([type(arg==data_type for arg in args)]):
+                return func(*args,**kwargs)
+            print("invalid argument")
+        return wraper_func
+    return decorator
+
+@only_data_type_allowe(str)
+def string_join(*args):
+    string=""
+    for i in args:
+        string+=i
+    return string
+print(string_join("harshit","vaishisht"))
+
+output:/e/python_tutorial/excercise_11_decorators
+$ python decorators_with_argument.py
+harshitvaishisht
+............................................................................................
+1(l)...

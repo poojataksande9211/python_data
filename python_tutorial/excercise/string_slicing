@@ -1,0 +1,10 @@
+#string slicing  #(string slicing is used when we want to print more than 1 character)
+#syntax=[start argument:stop argument]
+lang="python"
+print(lang[0:3]) #(suppose we want to print pyt then stop argument(2) add +1 means 3 )
+print(lang[1:6])
+print (lang[3:6])
+print (lang[:])   #(suppose we dont want to write start argument and stop argument then it will print full string)
+print (lang[1:]) #(i give start argument and not giving stop argument then it will print from start argument up to n)
+print (lang[5:])
+print (lang[:4]) #(suppose we want to give only stop argument then it will count start argument automaticaly from 0 to 3)

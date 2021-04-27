@@ -1,0 +1,550 @@
+1(a)...#introduction to oop
+#class,object(instance),method
+#class is a blue print of an object
+l=[12,3,3,4] #objext
+l2=[5,6,7,8]
+l3=["harshit","pooja","ganvir"] #object
+l.append(8) #append is method
+print(l)
+
+output:/e/python_tutorial/excercise_13_oops_concept
+$ python oopes_intro.py
+[12, 3, 3, 4, 8]
+..............................................................................
+1(b)...#create your first class
+#init method is called as constructor
+#in class func define is called method
+class Person: #class
+    def __init__(self,first_name,last_name,age): #attribute
+        print('init method / constructor get called') #3 time init method call
+        #instance variable
+        self.first_name=first_name #self represent the objct
+        self.last_name=last_name
+        self.age=age
+p1=Person("pooja","ganvir",34) #object
+p2=Person("harshit","vaishishth",23)
+p3=Person("rajan","pradhan",34)
+print(p1.first_name)
+print(p2.first_name)
+print(p3.first_name)
+
+output:/e/python_tutorial/excercise_13_oops_concept
+$ python create_your_first_class.py
+init method / constructor get called
+init method / constructor get called
+init method / constructor get called
+pooja
+harshit
+rajan
+.....................................................................................
+1(c)...class Laptop:
+    def __init__(self,brand_name,model_name,price):
+        self.brand_name=brand_name
+        self.model_name=model_name
+        self.price=price
+        self.laptop_name=brand_name+' '+model_name
+p1=Laptop("hp","dcp4",50003)
+p2=Laptop("intel","cdgb_65_nxx",90000)
+# print(p1.brand_name)
+# print(p2.brand_name)
+print(p2.laptop_name)
+
+output: /e/python_tutorial/excercise_13_oops_concept
+$ python example_1_laptop_class.py
+intel cdgb_65_nxx
+......................................................................................
+1(d)...#oop instance method...instance/object
+#class ke under jo bhi func he unko hum method bolate h
+class Person:
+    def __init__(self,first_name,last_name,age):
+        self.first_name=first_name
+        self.last_name=last_name
+        self.age=age
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
+    def age_above_18(self):
+        return self.age>18
+p1=Person("pooja","ganvir",24)
+p2=Person("amit","ganvir",16)
+print(p1.full_name())
+print(p2.age_above_18())
+# print(Person.full_name(p1)) #same as above
+#--------------------------------------------------------------
+l=[1,2,3,4,5]
+#clear and pop are method
+# l.clear()
+# list.clear(l) #same as above
+# print(l)
+# l.append(10)
+list.append(l,10) #list is class name,same as above
+print(l)
+
+output:/e/python_tutorial/excercise_13_oops_concept
+$ python oop_instance_method.py
+pooja ganvir
+False
+[1, 2, 3, 4, 5, 10]
+...................................................................................
+1(e)...class Laptop:
+    def __init__(self,brand_name,model,price):
+        self.brand_name=brand_name
+        self.model=model
+        self.price=price
+    def apply_diss(self,dis_num):
+        off_price=(dis_num/100) *self.price
+        return self.price-off_price
+
+Laptop1=Laptop("hp","gf45",50000)
+print(Laptop1.apply_diss(10))
+        
+output:/e/python_tutorial/excercise_13_oops_concept
+$ python discount_oop.py
+45000.0
+.....................................................................................
+1(f)...# class Circle():
+#     def __init__(self,radius,pi):
+#         self.radius=radius
+#         self.pi=pi
+#     def cal_circumference(self):
+#         return 2*self.pi*self.radius
+# c=Circle(4,3.14)
+# c1=Circle(5,3.14)
+# print(c.cal_circumference())
+#-------------------------------------
+#by using class variable
+# class Circle():
+#     pi=3.14
+#     def __init__(self,radius):
+#         self.radius=radius
+#     def cal_circumference(self):
+#         return 2*Circle.pi*self.radius
+# c=Circle(4)#pi value use no of times hence use class variale
+# c1=Circle(5)
+# print(c.cal_circumference())
+#-----------------------------------
+#10% discount on all product
+class Laptop:
+    dis=10
+    def __init__(self,brand_name,model_name,price):
+        #instance variable
+        self.brand_name=brand_name
+        self.model_name=model_name
+        self.price=price
+        self.laptop_name=brand_name + '' +model_name
+    def apply_diss(self):
+        off_price=(Laptop.dis/100)*self.price
+        return self.price -off_price
+
+laptop1= Laptop("hp","jhf22",30000)
+laptop2= Laptop("intel","rjs33",60000)
+print(laptop1.apply_diss())
+
+output: /e/python_tutorial/excercise_13_oops_concept
+$ python class_variable.py
+27000.0
+...........................................................................................
+1(g)...class Laptop:
+    dis=10
+    def __init__(self,brand_name,model_name,price):
+        self.brand_name=brand_name
+        self.model_name=model_name
+        self.price=price
+        self.laptop_name=brand_name + "" + model_name
+    def apply_diss(self):
+        off_price=(self.dis/100)*self.price #self likha bcoz use karni he key
+        return self.price-off_price
+Laptop.dis=10
+Laptop1=Laptop("hp","gh234",45000)
+Laptop2=Laptop("intell","zoo234",50000)
+Laptop2.dis=50
+print(Laptop2.apply_diss())
+#how to print object variable or namespaces
+#to check how many variable present in laptop1
+print(Laptop1.__dict__)
+
+output: /e/python_tutorial/excercise_13_oops_concept
+$ python class_variable_part_2.py
+25000.0
+{'brand_name': 'hp', 'model_name': 'gh234', 'price': 45000, 'laptop_name': 'hpgh234'}
+................................................................................................
+1(h)...#program to count instance variable
+class Person:
+    count_instance=0
+    def __init__(self,name,midd_name,sir_name,age):
+        Person.count_instance +=1
+        self.name=name
+        self.midd_name=midd_name
+        self.sir_name=sir_name
+        self.age=age
+p1=Person("pooja","amit","ganvir",28)
+p2=Person("amit","dushant","ganvir",32)
+print(Person.count_instance)
+
+output:/e/python_tutorial/excercise_13_oops_concept
+$ python count_no_of_instance_variable.py
+2
+...........................................................................................
+1(i)...#class method
+#diff between class method and instance method
+class Person:
+    count_instance=0 #class variable/class atribute
+    def __init__(self,name,midd_name,sir_name,age):
+        Person.count_instance+=1
+        self.name=name
+        self.midd_name=midd_name
+        self.sir_name=sir_name
+        self.age=age
+    @classmethod
+    def count_instances(cls):
+        return f"you have created {cls.count_instance} instance of person class"
+p1=Person("pooja","amit","ganvir",29)
+p2=Person("amit","dushant","ganvir",33)
+print(Person.count_instances())
+
+output: /e/python_tutorial/excercise_13_oops_concept
+$ python diff_classmethod_instancemethod.py
+you have created 2 instance of person class
+...........................................................................................
+1(j)...#class method as a constructor
+#when we create instance init method call hoga,init method is a constructor which can create instances
+class Person:
+    count_instance=0
+    def __init__(self,name,midd_name,sir_name,age):
+        Person.count_instance +=1
+        self.name=name
+        self.midd_name=midd_name
+        self.sir_name=sir_name
+        self.age=age
+    @classmethod
+    def from_string(cls,string):
+        name,mid,last,age=string.split(',')
+        return cls(name,mid,last,age)
+    @classmethod
+    def count_instances(cls):
+        return f"you have created {cls.count_instance} instance of class Person"
+    def full_name(self):
+        return f"{self.name} {self.sir_name}"
+p1=Person("pooja","amit","ganvir",45)
+print(p1.count_instances())
+#supose we have to create our own object like p1=person("pooja,amit,ganvir,33")
+p3=Person.from_string("pooja,amit,ganvir,33")
+print(p3.full_name())
+
+output:/e/python_tutorial/excercise_13_oops_concept
+$ python class_method_as_constructor.py
+you have created 1 instance of class Person
+pooja ganvir
+..............................................................................................
+1(k)...#static method
+#self represents the object or instance,cls represents class 
+class Person:
+    count_instance=0
+    def __init__(self,name,midd_name,sir_name,age):
+        Person.count_instance +=1
+        self.name=name
+        self.midd_name=midd_name
+        self.sir_name=sir_name
+        self.age=age
+    @classmethod
+    def from_string(cls,string):
+        name,mid,last,age=string.split(',')
+        return cls(name,mid,last,age)
+    def full_name(self):
+        return f"{self.name} {self.sir_name}"
+    @classmethod
+    def count_instances(cls):
+        return f"u have created {cls.count_instance} instance of {cls.__name__}"
+    @staticmethod
+    def hello():
+        print("hello,static method called")
+Person.hello()
+# p1=Person.from_string("pooja,amit,ganvir,33")
+# print(p1.full_name())
+#static method not be related to the class and object
+
+output:/e/python_tutorial/excercise_13_oops_concept
+$ python static_method.py
+hello,static method called
+.........................................................................................
+1(l)...#encapsulation
+#abstraction
+#in python all are public not private
+class Phone:
+    def __init__(self,brand_name,model_name,price):
+        self.brand_name=brand_name
+        self.model_name=model_name
+        self.__price=price
+    def self_call(self,phone_no):
+        print(f"calling {phone_no}")
+    def full_name(self):
+        return f"{self.brand_name} {self.model_name}"
+l=[4,2,3,1]
+l.sort()#python tym algorithm for sorting
+print(l)
+#abstraction:- to hide complexity
+#naming convention
+#_name it means its treated as private variable...convention of private name
+#__name__ :-it is called as double underscore//dunder//magic method
+phone1=Phone("nokia","1006",10000)
+print(phone1._Phone__price)
+print(phone1.__dict__)
+# phone1._price=-1000
+# print(phone1._price)
+#name mangaling:use double underscore/tunder
+
+output:/e/python_tutorial/excercise_13_oops_concept
+$ python abstraction_encapsulation.py
+[1, 2, 3, 4]
+10000
+{'brand_name': 'nokia', 'model_name': '1006', '_Phone__price': 10000}
+.............................................................................................
+1(m)...#property and setter decoration
+class Phone:
+    def __init__(self,model_name,brand,price):
+        self.model_name=model_name
+        self.brand=brand
+        self._price=max(price,0)
+        # if price > 0:
+        #     self._price= price
+        # else:
+        #     self._price=0
+        # self.complete_specification=f"{self.model_name} {self.brand} and price {price}"
+    @property
+    def complete_specification(self):
+        return f"{self.model_name} {self.brand} and price {self._price}"
+    @property
+    def price(self):
+        return self._price
+
+    @price.setter
+    def price(self,new_price):
+        self._price=max(new_price,0)
+    def make_a_call(self,phone_no):
+        print(f"calling {phone_no}.......")
+    def full_name(self):
+        return f"{self.model_name} {self.brand}"
+p1=Phone("nokia","67ffg",-5000) #suppose user enter -ve value to avoid this
+p1.make_a_call(9595136724)
+print(p1.model_name)
+print(p1.brand)
+# p1._price=-500
+# print(p1._price) #without settur
+print(p1._price) #with setter 
+# print(p1.complete_specification()) #without property use as function 
+print(p1.complete_specification) #with property decorators use as without paranthesis 
+
+output:/e/python_tutorial/excercise_13_oops_concept
+$ python property_and_setter_decoration.py
+calling 9595136724.......
+nokia
+67ffg
+0
+nokia 67ffg and price 0
+...............................................................................................
+1(n)...#inheritance
+class Phone:#base class/parent class
+    def __init__(self,model_name,brand,price):
+        self.model_name=model_name
+        self.brand=brand
+        self._price=max(price,0)
+    def full_name(self):
+        return f"{self.model_name} {self.brand}"
+    def calling_no(self,phone_no):
+        return f"calling {phone_no}"
+
+class Smartphone(Phone):#derived class/child class
+    def __init__(self,model_name,brand,price,ram,internal_memory,rear_camera):
+        Phone.__init__(self,model_name,brand,price)
+        # super().__init__(model_name,brand,price) #same as above method to call parent class
+        self.ram=ram
+        self.internal_memory=internal_memory
+        self.rear_camera=rear_camera
+        
+p1=Phone("nokia","567f",980)
+p2=Smartphone("1+","17vggfhmzz",34000,3,4,"3ds")
+print(p1.full_name())
+print(p2.full_name())
+print(p2.__dict__)
+print(p2._price)
+
+
+output:/e/python_tutorial/excercise_13_oops_concept
+$ python inheritance.py
+nokia 567f
+1+ 17vggfhmzz
+{'model_name': '1+', 'brand': '17vggfhmzz', '_price': 34000, 'ram': 3, 'internal_memory': 4, 'rear_camera': '3ds'}
+34000
+.............................................................................................
+1(p)...#method resolution order
+class Phone:#base class/parent class
+    def __init__(self,model_name,brand,price):
+        self.model_name=model_name
+        self.brand=brand
+        self._price=max(price,0)
+
+    def full_name(self):
+        return f"{self.model_name} {self.brand}"
+
+    def caliing_no(self,phone_no):
+        return f"calling from {phone_no}"   
+class Smartphone(Phone):#derived class/child class
+    def __init__(self,model_name,brand,price,ram,internal_memory,rear_camera):
+        Phone.__init__(self,model_name,brand,price)
+        self.ram=ram
+        self.internal_memory=internal_memory
+        self.rear_camera=rear_camera
+
+class flagshipPhone(Smartphone):
+    def __init__(self,model_name,brand,price,ram,internal_memory,rear_camera,front_camera):
+        Smartphone.__init__(self,model_name,brand,price,ram,internal_memory,rear_camera)
+        self.front_camera=front_camera
+p1=Phone("nokia","87hg",790)
+p2=Smartphone("1+","67ytr",78000,"16gb","4gb","7mp")     
+p3=flagshipPhone("1+","67ytr",78000,"16gb","4gb","7mp","9mp")
+print(p3.full_name()) 
+print(help(flagshipPhone))
+#mro check fullname method present in flagship or not....suppose not then search fullname method in smartphon
+#full name not present in smartphon then check in phone class
+
+output:
+ |  Method resolution order:
+ |      flagshipPhone
+ |      Smartphone
+ |      Phone
+ |      builtins.object
+...............................................................................................
+1(q)...#isinstance issubclass function
+#instance means object
+#isinstance :to check object is of perticular class
+class Phone:#base class/parent class
+    def __init__(self,model_name,brand,price):
+        self.model_name=model_name
+        self.brand=brand
+        self._price=max(price,0)
+
+    def full_name(self):
+        return f"{self.model_name} {self.brand}"
+
+    def caliing_no(self,phone_no):
+        return f"calling from {phone_no}"   
+class Smartphone(Phone):#derived class/child class
+    def __init__(self,model_name,brand,price,ram,internal_memory,rear_camera):
+        Phone.__init__(self,model_name,brand,price)
+        self.ram=ram
+        self.internal_memory=internal_memory
+        self.rear_camera=rear_camera
+    def full_name(self): #overriding according to mro it will 1st present smartphone
+        return f"{self.model_name} {self.brand} and price {self._price}"
+
+class flagshipPhone(Smartphone):
+    def __init__(self,model_name,brand,price,ram,internal_memory,rear_camera,front_camera):
+        # Smartphone.__init__(self,model_name,brand,price,ram,internal_memory,rear_camera)
+        super().__init__(model_name,brand,price,ram,internal_memory,rear_camera)
+        self.front_camera=front_camera
+    def full_name(self):
+        return f"{self.model_name} {self.brand} and prize{self._price} front camera={self.front_camera}"
+p1=Smartphone("1+","67ytr",78000,"16gb","4gb","7mp")
+p2=flagshipPhone("1+","67ytr",78000,"16gb","4gb","7mp","9mp")
+# print(p1.full_name())
+# print(isinstance(p1,Smartphone))
+# print(isinstance(p1,Phone))
+# print(isinstance(p1,flagshipPhone))
+# print(isinstance(p2,flagshipPhone))
+# print(isinstance(p2,Smartphone))
+# print(isinstance(p2,Phone))
+print(issubclass(Smartphone,Phone)) #to check smartphon is a subclass of phone class
+print(issubclass(Smartphone,flagshipPhone)) #smartphone is not sub class of flagshipPhone
+print(issubclass(flagshipPhone,Smartphone)) #flagshipPhone is a subclass of smartphone
+print(issubclass(flagshipPhone,Phone)) #flagshipphone is a subclassof phone
+
+output:/e/python_tutorial/excercise_13_oops_concept
+$ python isinstance_issubclass_fun.py
+True
+False
+True
+True
+...........................................................................................
+1(r)...#multiple inheritance 
+class A:
+    def class_a_method(self): #instance method
+        return "I'm just a class A method"
+    def hello(self): #instance method
+        return "hello from class A"
+class B:
+    def class_b_method(self):
+        return "I'm just class B method"
+    def hello(self):                   #to Execute class B hello method to change order of class C(B,A) 
+        return "hello from class B "
+class C(A,B):
+    pass
+instance_c=C() #instance /object
+# print(instance_c.class_a_method())
+# print(instance_c.class_b_method())
+# print(instance_c.hello()) #it print hello from class A not from b....seee mro of class c
+# print(help(C))#to check mro
+# print(C.mro())#to check mro
+print(C.__mro__) #to check mro
+
+output:/e/python_tutorial/excercise_13_oops_concept
+$ python multiple_inheritance.py
+(<class '__main__.C'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>)
+................................................................................................
+1(s)...#special_magic/dunder method...starting and ending with double under_score ex..(__init__)
+#pollymorphisom...ex method overriding
+# class Phone:
+#     def __init__(self,brand_name,model,price):
+#         self.brand_name=brand_name
+#         self.model=model
+#         self.price=price
+#     def phone_name(self):
+#         return f"{self.brand_name} {self.model}"
+#     def __repr__(self):
+#         return f"{self.brand_name} {self.price}"
+#     def __str__(self):
+#         return f"{self.brand_name} {self.model} {self.price}"
+#     def __len__(self):
+#         return len(self.phone_name())
+#     def __add__(self,other):
+#         return self.price + other.price
+# # l=[1,2,3]
+# # print(l)
+# # print(len(l))
+# my_phone=Phone("Nokia","p9000",89000)
+# # print(my_phone) #to avoid  this <__main__.Phone object at 0x00F67160>...use str,rpre
+# print(str(my_phone))
+# print(repr(my_phone))
+# #----------------
+# my_phone=Phone("Nokia","p9000",89000)
+# my_phone2=Phone("Nokia1223","p900077",890099)
+# print(my_phone+my_phone2) #TypeError: unsupported operand type(s) for +: 'Phone' and 'Phone'...use __add__ overloading
+#.......................................................................................................
+class Phone:
+    def __init__(self,brand_name,model,price):
+        self.brand_name=brand_name
+        self.model=model
+        self.price=price
+    def phone_name(self):
+        return f"{self.brand_name} {self.model}"
+    def __len__(self):
+         return len(self.phone_name())
+class Smartphone(Phone):
+    def __init__(self,brand_name,model,price,camera):
+        super().__init__(brand_name,model,price)
+        self.camera=camera
+    def phone_name(self):
+        return f"{self.brand_name} {self.model} and {self.price}"
+    def __len__(self):
+        return self.price
+my_phone=Phone("Nokia","p9000",89000)
+my_smartphone=Smartphone("oneplus","67gfdgsd",78090,"70mp")
+print(my_smartphone.phone_name())
+print(len(my_smartphone))
+print(len(my_phone))
+
+output:/e/python_tutorial/excercise_13_oops_concept
+$ python special_magic_dunder_method.py
+oneplus 67gfdgsd and 78090
+78090
+11
+....................................................................................
+1(t)...

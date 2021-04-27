@@ -1,0 +1,158 @@
+1(a).....what is list comprehension
+# sq=[]
+# for i in range(1,11):
+#     sq.append(i**2)
+# print(sq)
+#-------------
+# sq2=[i**2 for i in range(1,11)]
+# print(sq2)
+#---------------------------------------
+# neg=[]
+# for i in range(1,11):
+#     neg.append(-i)
+# print(neg)
+# #---
+# neg2=[-i for i in range(1,11)]
+# print(neg2)
+#------------------------------------------
+list1=['pooja','amit','Raj']
+new_list=[]
+for i in list1:
+    new_list.append(i[0])
+print(new_list)
+#---
+list1=['pooja','amit','Raj']
+new_list1=[i[0] for i in list1]
+print(new_list1)
+
+output:/e/python_tutorial/excercise_7_list_comprehension
+$ python list_comprehension_intro.py
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+[-1, -2, -3, -4, -5, -6, -7, -8, -9, -10]
+[-1, -2, -3, -4, -5, -6, -7, -8, -9, -10]
+
+#------------------------------------------------------
+.............................................................
+1(b)..#write a code for reverse of string using list comprehension
+list1=['abc','pqr','xyz']
+new_list1=[i[::-1] for i in list1]
+print(new_list1)
+
+output:/e/python_tutorial/excercise_7_list_comprehension
+$ python reverse.py
+['cba', 'rqp', 'zyx']
+...............................................................
+1(c)....#list comprehension with if statement
+numbers=list(range(1,11))
+print(numbers)
+# new_list=[]
+# for i in numbers:
+#     if i%2==0:
+#         new_list.append(i)
+# print(new_list)
+#---------------------
+new_list=[i for i in numbers if i%2==0] #even
+new_list_even=[i for i in range(1,11) if i%2==0]
+print(new_list)
+print(new_list_even)
+#-----------------------------
+odd=[i for i in range(1,11) if i%2 != 0]
+odd1=[i for i in numbers if i%2 !=0]
+print(odd)
+print(odd1)
+
+output:/e/python_tutorial/excercise_7_list_comprehension
+$ python if_list_comp.py code if_list_comp
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[2, 4, 6, 8, 10]
+[2, 4, 6, 8, 10]
+[1, 3, 5, 7, 9]
+[1, 3, 5, 7, 9]
+......................................................................
+1(d)...#convert a integer to string 
+def num(l): #without comprehension
+    new_list=[]
+    for i in l:
+        if type(i)==int or type(i)==float:
+            new_list.append(str(i))
+    print(new_list)
+num([True,False,[1,2,4],6,7,1.0])
+
+# def num(l): #with comprehension
+#     return [str(i) for i in l if (type(i)==int or type(i)==float)]
+# print(num([True,False,[1,2,4],6,7,1.0]))
+
+output:/e/python_tutorial/excercise_7_list_comprehension
+$ python convert_num_to_string_list.py
+['6', '7', '1.0']
+.................................................................
+1(e)....#write a python program to print even no multiply by 2 and odd no negative
+list1=[1,2,3,4,5,6,8,9] #without list comprehension
+new_list=[]
+for i in list1:
+    if i%2==0:
+        new_list.append(i*2)
+    else:
+        new_list.append(-i)
+print(new_list)
+#-----------------------------------------
+new_list1=[i*2 if i%2==0 else -i for i in list1] #with comprehension
+print(new_list1)
+
+output:/e/python_tutorial/excercise_7_list_comprehension
+$ python list_com_with_if_else_statement.py
+[-1, 4, -3, 8, -5, 12, 16, -9]
+[-1, 4, -3, 8, -5, 12, 16, -9]
+..................................................................................
+1(f)...#program for nested comprehension
+example=[[1,2,3],[1,2,3],[1,2,3]]
+nested_comp=[[i for i in range(1,4)] for j in range(3)]
+print(nested_comp)
+#--------
+new_list=[]
+for j in range(3):
+    new_list.append([1,2,3])
+print(new_list)
+
+/e/python_tutorial/excercise_7_list_comprehension
+$ python nested_list_comprehension.py
+[[1, 2, 3], [1, 2, 3], [1, 2, 3]]
+[[1, 2, 3], [1, 2, 3], [1, 2, 3]]
+...................................................................................
+1(g)...#list comprehension summury
+square=[]
+for i in range(1,11): #without list comprehension
+    square.append(i**2)
+print(square)
+#-------------
+square1=[i**2 for i in range(1,11)] #with list comprehenion
+print(square1)
+#......................................
+#if condition in list comprehension
+even_no=[i for i in range(1,11) if i%2 ==0]
+print(even_no)
+#------------------------------------
+#list comprehension with if else(even no multi by 2 and odd no mult by -1)
+mixed=[i*2 if (i%2==0) else -i for i in range(1,11)]
+print(mixed)
+#---------------------------------
+#nested list comprehension
+nl=[[1,2,3],[1,2,3],[1,2,3]]
+nested_list=[[i for i in range(1,4)] for j in range(3)]
+print(nested_list)
+# new_l=[] #without list comprehension
+# for j in range(3):
+#     new_l.append([1,2,3])
+# print(new_l)
+
+output:/e/python_tutorial/excercise_7_list_comprehension
+$ python summury_list_comprehension.py
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+[2, 4, 6, 8, 10]
+[-1, 4, -3, 8, -5, 12, -7, 16, -9, 20]
+[[1, 2, 3], [1, 2, 3], [1, 2, 3]]
+[[1, 2, 3], [1, 2, 3], [1, 2, 3]]
+.............................................................................................
+1(h)...

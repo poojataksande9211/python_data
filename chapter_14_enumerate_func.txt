@@ -1,0 +1,34 @@
+1(a).....#enumerate function
+# a=['abc','efg','hijkl'] #without enumerate function
+# pos=0
+# for i in a:
+#     print(f"{pos} {i}")
+#     pos=pos+1
+#------------------------------------
+#with enumerate function
+a=['abc','efg','hijkl']
+for pos,i in enumerate(a):
+    print(f"{pos}---->{i}")
+
+
+output:e/python_tutorial/excercise_10_enumerate_function
+$ python enumerate_func.py
+0---->abc
+1---->efg
+2---->hijkl
+...........................................................
+1(b)....program to find the pos of string
+#program to find pos of string
+names=['pooja','harshit','amit','ganvir','aaji']
+def find_pos(names,target):
+    for pos,i in enumerate(names):
+        if i==target:
+            return pos
+    return -1
+print(find_pos(names,'ganvir'))
+
+output:/python_tutorial/excercise_10_enumerate_function
+$ python find_pos_of_string_using_enumerate.py
+3
+....................................................................
+1(c)....

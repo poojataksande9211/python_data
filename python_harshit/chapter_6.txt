@@ -1,0 +1,549 @@
+1(a)....functions
+#functions
+# name="ganvir"
+# print(len(name)) #len is a function
+# def add_two(a,b): #def is use to define function
+#     return a + b
+# total=add_two(4,4)
+# print(total)
+#...............................
+def add_two(a,b):
+    return a + b
+print(add_two(7,7))
+
+output:python function.py
+14
+y..........................................
+
+1(b).....write a program to add two no by user input
+
+def add(a,b):
+    return a + b
+num1=int(input("enter first no"))
+num2=int(input("enter second no"))
+# total=add(num1,num2)
+# print(total)
+print(add(num1,num2))
+
+output:python funct_input.py
+enter first no3
+enter second no5
+8
+.....................................................
+1(c)....write a program to concatinate two string using function
+
+def concat_str(a,b):
+    return a+b
+first_name=input("enter first name")
+last_name=input("enter last name")
+# result=concat_str(first_name,last_name)
+# print(result)
+print(concat_str(first_name,last_name))
+
+output:python funct_concatinate_string.py
+enter first namepooja
+enter last nameganvit
+pooja ganvit
+.....................................................
+1(d)....return vs print 
+
+# def add_two(a,b):
+#     return a+b
+# print(add_two(5,5))
+#................................
+def add_two(a,b):
+    print(a+b)
+add_two(5,5)
+
+output: python funct_return_print.py
+10
+................................................
+1(e)...write a program to print last character of a string using function
+
+def last_char(a):
+    return a[-1]
+name=input("enter name")
+print(last_char(name))
+
+output:python func_last_character_string.py
+enter name swati
+i
+.....................................
+1(f)......write a program to print even odd using function
+
+# def even_odd(no):
+#     if no %2== 0:
+#         return "even"
+#     else:
+#         return "odd"
+# print(even_odd(18))
+#.......................... #both are same
+# def even_odd(no):
+#     if no %2== 0:
+#         return "even"
+#     return "odd"
+# print(even_odd(18))
+#...............................
+# def is_even(num):
+#     if num % 2==0:  
+#         return True
+#     else:
+#         return  False
+# print(is_even(9))
+#........................
+# def is_even(num):
+#     if num % 2==0:  
+#         return True
+#     return  False
+# print(is_even(10))
+#.............................
+def is_even(num):
+    return num %2==0
+print(is_even(15))
+
+output:python func_even_odd.py
+False
+
+..................................................
+1(g)....function without parameter
+def song():
+    return "happy birthaday song"
+print(song())
+
+output:python func_wthout_parameter.py
+happy birthaday song
+....................................
+
+1(h)....write a program greatest among 2 no using function
+# a=int(input("enter first no"))
+# b=int(input("enter second no"))
+# def great_no(no1,no2):
+#     if no1 >no2:
+#         return "no1 is grater"
+#     else:
+#         return "no2 is greater"
+# print(great_no(a,b))
+#.............................
+a=int(input("enter first no"))
+b=int(input("enter second no"))
+def great_no(no1,no2):
+    if no1 >no2:
+        return no1
+    return no2
+bigger=great_no(a,b)
+print(f"{bigger} is greater")
+
+output:
+python func_greatest_2_no.py
+enter first no44
+enter second no77
+77 is greater
+..................................................................
+1(i)....write a program greatest among 3 no using function
+num1=int(input("enter first no"))
+num2=int(input("enter second no"))
+num3=int(input("enter third no"))
+def great_3_no(a,b,c):
+    if a>b and a>c:
+        return a
+    elif b>a and b>c:
+        return b
+    else:
+        return c
+bigger=great_3_no(num1,num2,num3)
+print(f"{bigger} is greater")
+
+output:python func_greatest_3_no.py
+enter first no44
+enter second no777
+enter third no545
+777 is greater
+..................................................................
+1(j).....function insight function greatest among 3 no
+#function insight function
+def great(a,b):
+    if a>b:
+        return a
+    return b
+# print(great(30,40))
+def great_new(a,b,c):
+    bigger=great(a,b)
+    return great(bigger,c)
+print(great_new(56,90,22))
+
+output:
+python func_insite_func.py
+90
+...................................................................
+1(k).....write a program to check pallindrome of a string using function
+# # i=0
+# name=input("enter name")
+# def pallindrom(string):
+#     reverse=string[::-1]
+#     for i in range(0,len(string)):
+#         if reverse[i] == string[i]:
+#             return "pallindrom"
+#         return "not pallindrome"
+# print(pallindrom(name))
+#...................................
+name=input("enter name")
+def pallindrom(string):
+    reverse = string[::-1]
+    if reverse == string:
+        return True
+    return False
+print(pallindrom(name))
+
+output:
+pooja@amit-PC MINGW64 /e/python_tutorial/excercise_2
+$ python pallindrom_string.py
+enter namenaman
+True
+........................................................................
+1(l).....write a program to find max of three no using func within func
+def max_two(a,b):
+    if a>b:
+        return a
+    return b
+def max_three(a,b,c):
+    return max_two(c,max_two(a,b))
+print(max_three(30,-5,88))
+
+output:pooja@amit-PC MINGW64 /e/python_tutorial/excercise_2
+$ python func_max_no.py
+88
+.................................................................
+1(m)......write a program to sum no(5,5,6,7,8)
+def sum(numbers):
+    total=0
+    for i in numbers:
+        total=total+i
+    return total
+print(sum((5,5,6,7,8))) 
+  
+output:pooja@amit-PC MINGW64 /e/python_tutorial/excercise_2
+$ python func_sum.py
+31
+.......................................................
+1(n)....#Write a Python function to multiply all the numbers in a list. Go to the editor Sample List : (8, 2, 3, -1, 7)
+def multiply(numbers):
+    multy=1
+    for i in numbers:
+        multy=multy*i
+    return multy
+print(multiply((8,2,3,-1,7)))
+
+output:
+pooja@amit-PC MINGW64 /e/python_tutorial/excercise_2
+$ python func_multiply_no.py
+-336
+................................................................
+1(o).....#Write a Python program to reverse a string.Sample String : "1234abcd"
+def reverse(string):
+    return string[::-1]
+print(reverse("1234abcd"))
+
+output:/excercise_2
+$ python func_reverse_string.py
+dcba4321
+....................................................................
+1(p)......factorial of a no
+no=int(input("enter no"))
+fact=1
+for i in range(1,no+1):
+    fact=fact*i
+print(fact)
+output:/excercise
+$ python factorial.py
+enter no6
+720
+................
+1(q)....#Write a Python function to calculate the factorial of a number using func
+num=int(input("enter no"))
+def factorial(no):
+    fact=1
+    if no <0:
+        print("-ve no factorial not exist")
+    else:
+        for i in range(1,no+1):
+            fact=fact*i
+        return fact
+print(factorial(num))
+
+output:
+python func_factorial.py
+enter no6
+720
+.............................................
+1(r).....#Write a Python function to check whether a number is in a given range
+def range_with(n):
+    if n in range(3,9):
+        print("%s is in the range"%str(n))
+    else:
+        print("%s is out of the range"%str(n))
+range_with(8)
+
+output:/excercise_2
+$ python func_range.py
+8 is in the range
+................................................................
+1(s).Write a Python function that accepts a string and calculate the number of upper case letters and lower case letters.
+def upper_lower(string):
+    upper=0
+    lower=0
+    for i in string:
+        if i>"A" and i< "Z":
+            upper=upper+1
+        #elif i> "a" and i< "z":
+        else:
+            lower=lower+1
+    print(f"uppercase={upper}")
+    print(f"lowercase={lower}")
+upper_lower("HEllo")
+
+output:
+/excercise_2
+$ python func_upper_lower_case.py
+uppercase=2
+lowercase=3
+................................................................
+1(t).#Write a Python function that takes a list and returns a new list with unique elements of the first list.
+def unique(list1):
+    list2=[]
+    for i in list1:
+        if i not in list2:
+            list2.append(i) #The append() method appends an element to the end of the list.
+    return list2
+print(unique([1,2,3,4,4,4,4,5,5,6,5,7,8]))
+
+output:/excercise_2
+$ python func_unique_append.py
+[1, 2, 3, 4, 5, 6, 7, 8]
+.....................................................................
+1(u)..#Write a Python function that check the number is prime or not
+# num=input("enter no")
+# num=int(num)
+# for i in range(2,num):
+#     if (num%i) ==0:
+#         print(num,"not a prime")
+#         break
+# else:
+#     print("prime no")
+#.........................
+num=input("enter no")
+num=int(num)
+def prime_no(n):
+    # num=input("enter no")
+    # num=int(num)
+    for i in range(2,num):
+        if (num%i ==0):
+            print(num,"not prime no")
+            break
+    else:
+        print(num,"is a prime no")
+prime_no(num)
+
+output:excercise_2
+$ python func_prime.py
+enter no111
+111 not prime no
+................................................................................
+1(v)#Write a Python program to print the even numbers from a given list.
+# list1=[2,3,55,10,7,8,9,12,14,15] #without function
+# for i in range(0,len(list1)):
+#     if (list1[i]%2) ==0:
+#         print(list1[i],end =" ")
+#.....................
+# list1=[2,3,55,10,7,8,9,12,14,15] #without function
+# for i in list1:
+#     if (i%2) ==0:
+#         print(i,end =" ")
+#........................
+def even_no(list):
+    for i in list:
+        if i%2 ==0:
+            print(i,end =" ")
+even_no([2,3,55,10,7,8,9,12,14,15])
+
+output:/excercise_2
+$ python func_even_no.py
+2 10 8 12 14
+................................................................................
+1(w)...
+*** If the sum of the proper divisors of the number is equal to the original number, the number is a Perfect number.
+#Write a Python function to check whether a number is perfect or not
+# no=28
+# sum=0
+# for i in range(1,no):
+#     if (no%i == 0):
+#         sum=sum+i
+# if sum==no:
+#     print(no,"is perfect no")
+# else:
+#     print(no," is not perfect no")
+#..................................
+def perfect_no(no):
+    sum=0
+    for i in range(1,no):
+        if (no%i ==0):
+            sum=sum+i
+    if sum==no:
+        print(no,"is perfect no")
+    else:
+        print(no,"is not perfect no")
+perfect_no(6)
+
+output:/excercise_2
+$ python func_perfect_no.py
+6 is perfect no
+......................................................................................
+1(x)..#Write a Python function that checks whether a passed string is palindrome or not
+#A palindrome is a word, phrase, or sequence that reads the same backward as forward, e.g., madam
+# string="navan"
+# for i in string:
+#     reverse=string[::-1]
+# if reverse==string:
+#     print(string,"is pallindrome")
+# else:
+#     print(string,"is not pallindrome")
+def pallindrome(string):
+    for i in string:
+        reverse=string[::-1]
+    if reverse==string:
+        print(string,"is pallindrome")
+    else:
+        print(string,"is not pallindrome")
+pallindrome("madam")
+
+output:/excercise_2
+$ python func_pallindrome.py
+madam is pallindrome
+.......................................................................................
+1(y)....#A pangram is a unique sentence in which every letter of the alphabet is used at least once. 
+import string
+string='the quick brown fox jumps over the lazy dog'
+def unique(str):
+    list2="abcdefghijklmnopqrstuvwxyz"
+    for i in list2:
+        if i not in str.lower():
+            # list2.append(i) #The append() method appends an element to the end of the list.
+            return False
+        return True
+    # if list1==list2:
+# string='fox the'
+if (unique(string)==True):
+    print("pangram")
+else:
+    print("not pangram")
+
+output:/excercise_2
+$ python func_pangram.py
+pangram
+..................................................................
+1(z)...#Write a Python program that accepts a hyphen-separated sequence of words as input and prints the words in a hyphen-separated sequence after sorting them alphabetically
+# item=input("enter input seperated by minus").split("-")
+# # item.sort()
+# for i in item:
+#     item.sort()
+# print('-'.join(item))
+#....................................................
+item=input("enter input seperated by minus").split("-")
+def sort_alphabet():
+    for i in item:
+        item.sort()
+# print('-'.join(item))
+sort_alphabet()
+print('-'.join(item))
+
+output:/excercise_2
+$ python func_sort_alphabeticaly.py
+enter input seperated by minuspooja-amit-vivan-nnn
+amit-nnn-pooja-vivan
+........................................................................
+2(a)...#Write a Python function to create and print a list where the values are square of numbers between 1 and 30 
+# total=0
+# for i in range(1,31):
+#     total=(i**2)
+#     print(total)
+#..................................
+def square():
+    total=0
+    for i in range(1,31):
+        total=(i**2)
+        print(total)
+square()
+
+output:/excercise_2
+$ python func_square_no.py
+1
+4
+9
+16
+25
+36
+49
+64
+...............................................................................
+2(b).....#addition of 3 no usin function insigtht function
+def add(a,b):
+    return a+b
+def add_new(a,b,c):
+    sum=add(a,b)+c
+    return sum
+print(add_new(30,20,12))
+
+output:/excercise_2
+$ python func_add_insight_func
+62
+............................................................
+2(c)...#co_nlocals() function which returns the number of local variables
+def add():
+    x=3
+    y=2
+    str="pooja ganvir"
+print(add.__code__.co_nlocals)
+
+output:/excercise_2
+$ python func_local_variable
+3
+.........................................................
+2(d)....default parameters
+#last_name and age are the default parameters #default parameter are in  ending position
+def default_parameter(first_name,last_name="unknown",age="none"):
+    print(f"First Name ={first_name}")
+    print(f"last_name ={last_name}")
+    print(f"age ={age}")
+default_parameter("pooja")
+
+output:/excercise_2
+$ python func_default_parameter.py
+First Name =pooja
+last_name =unknown
+age =none............................................................
+2(e)...
+# def fac():
+#     x=7 #we can not use x variable out of func
+#     return x
+# def fac2():
+#     print(x) #we can not acccess value of x in fun 2 #error
+# fac2()
+#........................
+x=5 #global variable
+def fuc():
+    global x #suppose we want to change the value of global variabl in func use global
+    x=7 #local variable
+    return x
+print(x)
+print(fuc())
+print(x) #error x not define #becoz the scope of x only in func
+
+output:
+/excercise_2
+$ python func_variable_scope.py
+5
+7
+..........................................................................
+7
+
+
+

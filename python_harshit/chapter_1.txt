@@ -1,0 +1,96 @@
+1(a)::COMMENTS:
+  control +(forword slash /) use for comment
+
+  control +(forword slash /) use for uncomment
+
+1(b)::Escape Character as normal text
+e.g Output: line a \n lineb
+>print ("line a \n line b")
+line a
+line b
+>print ("line a \\n line b") #(Double \\ treat as single \)
+line a \n line b
+
+e.g Output: line a \t line b
+>print ("line a \\t line b") #(Double \\ traet as single backslash)
+line a \t line b
+
+e.g output: this is double backslash \\
+>print ("this is double backslash \\\\") #(\\\\ treat as 2 \\)
+this is double backslash \\
+ 
+e.g output \" \'
+>print (" \" \' ")
+   "  '
+>print ("\\\" \\\' ")
+   \" \'
+
+# \':= ' (a)
+# \\:= \  (b)
+#\\\':= \' combine a+b
+
+1(c) write a program to print following lines 
+
+this is \\ backslash
+
+these are /\/\/\/\/\ mountains
+he is      awesome #(use escape sequence instead of using manual space)
+\" \n \t \'
+> print ("this is \\\\ double backslash")
+> print ("these are /\\/\\/\\/\\/\\ mountains")
+> print ("he is\tawesome")
+> print ("\\\" \\n \\t \\\'")
+
+
+1(c)...without escape sequence use \n as a text by using r
+output:this  is \n pooja
+> print (r"this is \n pooja")
+this is \n pooja
+> print (r"this is \t pooja")
+this is \t pooja
+
+1(d)..How to print emoji
+
+
+
+2(a)....calculation
+Addition +
+> print (5+4)
+9
+subtration -
+> print (5-2)
+3
+multiplication *
+> print (5*4)
+20
+Division 
+floating point division /
+>print (10/5)
+2.0
+>print (2/4)
+0.5
+integer division //
+>print (10//5)
+2
+>print (5//10)
+0
+
+
+2(b)....exponential
+>print (2**3) #(2 to the power 3)
+8
+>print (2**4) #(2 to the power 4)
+16
+
+2(c).....find Under root of 2 and 4
+> print (2**0.5) #(under root is 1/2 means 0.5)
+1.4142135623730951
+
+>print (4**0.5)
+2
+2(d).....round function(round function is used when the fractional value is bigger)
+>print (2**0.5)
+1.4142135623730951 #(the fractional value is 16 didit...so to reduce fractional digit use round function)
+
+>print(round(2**0.5,4)) #(,4 is define as fractional value up to 4)
+1.4142

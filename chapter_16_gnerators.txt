@@ -1,0 +1,120 @@
+1(a)...#generators
+#generators are iterator##
+l=[1,2,3] #iterable ,#we can change iterable to itrator
+map(lambda a: a**2,l) #iterator 
+# for i in l:
+#     print(i)
+i=iter(l)
+print(next(i)) #we cant directly call to itrable
+# print(next(i))
+#iterable pe loop chala sakate he(but pahele iter pe call karna padta h)
+#iterator pe direct call kar sakta he
+#l=[1,2,3,4]
+# memory=[.................]#list require maximum memory
+# memory=(1)#genrator require min memory,and better performance than list,enerator generator at a time 1 element
+# if u want to use sequence no of times then u can use list
+# if u want to use sequence at one time then u can use generator
+...................................................................................
+1(b)...#write first generator with generator function
+#generator can form by using two fun
+#1.generator func
+#2.generator comprehension
+def nums(n):
+    for i in range(1,n+1):
+        yield(i)
+# print(nums(10))
+numbers=list(nums(10))
+for num in numbers:
+    print(num)
+for num in numbers:
+    print(num)
+
+output:/e/python_tutorial/excercise_12_generators
+$ python write_first_generator.py
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+......................................................................................
+1(c)...# def gen_ex(no):
+#     for i in range(1,no+1):
+#         if i%2==0:
+#             yield(i)
+# numbers=list(gen_ex(7))
+# for j in numbers:
+#     print(j)
+#----------------------------------
+# def even_gen_ex(no):
+#     for i in range(1,no+1):
+#         if i%2==0:
+#             yield(i)
+# numbers=even_gen_ex(8)
+# for j in even_gen_ex(8):
+#     print(j)
+# for j in even_gen_ex(8):
+#     print(j)   
+#----------------------------------
+def gen_ex(no):
+    for i in range(2,no+1,2): #skip if i%2==0
+            yield(i)
+numbers=list(gen_ex(20))
+for j in numbers:
+    print(j)
+
+output:/e/python_tutorial/excercise_12_generators
+$ python genarator_func_exa_1.py
+2
+4
+6
+8
+............................................................................
+1(d)...#genwrator comprehension
+# square=[i**2 for i in range(1,11)] #list comprehension
+square=(i**2 for i in range(1,11)) #generator comprehension
+for i in square:
+    print(i)
+for i in square:
+    print(i)
+#-----------------------------
+# square=(i**2 for i in range(1,11))
+# print(next(square))
+# print(next(square))
+# print(next(square))
+# print(next(square))
+
+output:/e/python_tutorial/excercise_12_generators
+$ python genarator_comprehension.py
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+....................................................................................
+1(e)...#list_vs_generators
+# lsit_1=[ i**2 for i in range(10000000)] #list require maximum memory as compare to generator
+# generator_1=(i**2 for i in range(10000000))
+#-------------------------------------
+#how to calculate time
+import time
+t1=time.time()
+# l=[i**2 for i in range(10000000)] #time required for list is near about 14 sec
+g=(i**2 for i in range(10000000)) #time rquired for generator is 0.0 sec
+t2=time.time()
+print(t2-t1)
+
+output:/e/python_tutorial/excercise_12_generators
+$ python list_vs_generator.py
+0.0
+......................................................................................
+1(f)...

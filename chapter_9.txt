@@ -1,0 +1,359 @@
+1(a)...#what are dictionaries:-unordered collections of data in a key: value pair
+#how to create dictionaries
+# user={"name": "pooja","age" : 23}
+# print(user)
+# user1={'name':'amit','age':24} #name is a key and value of key is amit
+# print(user1)
+# print(type(user))
+# print(type(user1))
+#----------------------------
+#second method to create dictionary
+user=dict(name='pooja',age=45)
+print(user)
+print(type(user))
+#------------------------------
+#how to access data from dictionary(in dic data access by using key,and in list data acccess by using index)
+user=dict(name='pooja',age=45)
+print(user['name']) #access data by using key value
+print(user['age'])
+#-------------------------------
+#which type of data a dictoinary can store...#anything(number,strings,dictionary,list)
+# user_info={
+#     'name':'pooja',
+#     'age' :34,
+#     'fav_movies':['kal ho na ho','raise'],
+#     'fav_tunes' :['lag ja gale','aaj he sagai'],
+# }
+# print(user_info)
+# print(user_info['fav_movies']) #fav_movie access by using key
+#--------------------------------
+#dic within dictionary
+# users={
+#     'user1' :{
+#         'name':'pooja',
+#         'age':34,
+#         'roll_no':2,
+#     },
+#     'user2':{
+#         'last_name':'ganvir',
+#         'house_no' :23,
+#         'street_no':4,
+#     },
+# }
+# print(users)
+#--------------------------------------
+#how to add data to empty dictionary
+user_info={}
+user_info['name']='pooja'
+user_info['age']=45
+print(user_info)
+
+output:/python_tutorial/excercise_5_dictionaries
+$ python dict_intro.py
+{'name': 'pooja', 'age': 45}
+<class 'dict'>
+pooja
+45
+{'name': 'pooja', 'age': 45}
+.....................................................................................
+1(b)...#in keyword and itrations(looping) in dictionaries
+user_info={
+    'name':'pooja',
+    'age':23,
+    'fav_movies':['kal ho na ho','raise'],
+    'fav_tune':['ha sagari kinara','dis jatil dis yetil'],
+}
+print(user_info)
+#check if key exist in dictionary
+# if 'name' in user_info: #in keyword check only for key
+#     print("present")
+# else:
+#     print("not present")
+#-----------------------------------
+#check if value exist in dictionary
+# if 'pooja' in user_info.values():  #values method
+#     print("present")
+# else:
+#     print("not present")
+#check if list exist in dic
+# if ['kal ho na ho','raise'] in user_info.values():
+#     print("present")
+# else:
+#     print("not present")
+#-----------------------------------
+#looping
+# for i in user_info:
+#     print(i) #it will print all key
+for i in user_info.values():
+    print(i) #it will print all values
+for i in user_info: #same as above for loop
+    print(user_info[i])
+#values method
+# user_info_values=user_info.values()
+# print(user_info_values)
+# print(type(user_info_values))
+#-----------------------
+#keys method
+# user_info_keys=user_info.keys()
+# print(user_info_keys)
+# print(type(user_info_keys))
+#-----------------------
+#items method
+# user_items=user_info.items()
+# print(user_items)
+# print(type(user_items)) #return o/p in [(),(),(),()] tuple form
+for key,value in user_info.items():
+    print(f"key is {key} and value is {value}")
+for i in user_info.items(): #tuple unpacking print
+    print(i)
+
+output:key is name and value is pooja
+key is age and value is 23
+key is fav_movies and value is ['kal ho na ho', 'raise']
+key is fav_tune and value is ['ha sagari kinara', 'dis jatil dis yetil']
+('name', 'pooja')
+('age', 23)
+('fav_movies', ['kal ho na ho', 'raise'])
+('fav_tune', ['ha sagari kinara', 'dis jatil dis yetil'])
+.............................................................................
+1(c)...#add and delete data from dictionry
+dic={
+    'name':'pooja',
+    'age':24,
+    'last_name':'ganvir',
+    'fav_movies':['ram lila','ravan'],
+    'fav_tunes':['abhas ha','jar mi paus zale'],
+}
+print(dic)
+dic['fav_song']=['divanagi','jaudyana']  #add data to dic
+# print(dic)
+#delete data(pop method)
+pop_item=dic.pop('fav_tunes') #atleat pass1 argument
+print(f"pop item is{pop_item}")
+print(dic)
+print(type(pop_item))
+#----------------------
+#popitem method
+# pop_it=dic.popitem() #popitem method removes a random item
+# print(pop_it)
+# print(dic)
+# print(type(pop_it))
+
+output:/e/python_tutorial/excercise_5_dictionaries
+$ python add_delete_data_from_dictionaris.py
+{'name': 'pooja', 'age': 24, 'last_name': 'ganvir', 'fav_movies': ['ram lila', 'ravan'], 'fav_tunes': ['abhas ha', 'jar mi paus zale']}
+pop item is['abhas ha', 'jar mi paus zale']
+{'name': 'pooja', 'age': 24, 'last_name': 'ganvir', 'fav_movies': ['ram lila', 'ravan'], 'fav_song': ['divanagi', 'jaudyana']}
+<class 'list'>
+.........................................................................................
+1(d)...#update method in dictionary :=update the dictionary with key and value pair
+user_info={
+    'name':'pooja ganvir',
+    'age':45,
+    'last_name':'ganvir',
+    'fav_mov':['take off','majali'],
+    }
+# more_info={'state':'maharashtra','dist':['wardha','nagpur']}
+# user_info.update(more_info)
+# print(user_info)
+#----------------
+# more_info={'name':'savita','state':'maharashtra','dist':['wardha','nagpur']}
+# user_info.update(more_info) #suppose name is present in dic1 so it will replace the name or update name of dic2 
+# print(user_info)
+#-----------------------------
+user_info.update({})
+print(user_info)
+
+output:/python_tutorial/excercise_5_dictionaries
+$ python update_method_dic.py
+{'name': 'pooja ganvir', 'age': 45, 'last_name': 'ganvir', 'fav_mov': ['take off', 'majali']}
+......................................................................................................
+1(e)...fromkeys() method  return a dictionary with the specified keys and specified values
+# d=dict.fromkeys(['name','last_name','middle_name'],'unknown') #used list
+# print(d)
+# print(type(d))
+#----------------------------
+# d=dict.fromkeys(('name','middle_name','last_name'),'unknown') #used tuple
+# print(d)
+# print(type(d))
+#--------------------------
+# d=dict.fromkeys("pooja",'unknown') #use string itwill print seperately
+# print(d)
+#--------------------------
+# d=dict.fromkeys(range(1,10),'unknown')
+# print(d)
+#--------------------------------
+# d=dict.fromkeys(['name','age'],['unknown','unknown'])
+# print(d)
+#----------------------------------
+#get method :=is used to access key
+# d={'name':'unknown','age':'unknown'}
+# print(d['name']) #it will print the key value of name
+# print(d['names']) #it will give an error bocz names not present in dic to avoide this error use get method
+# print(d.get('name'))#get method return the value of item with specified key
+# print(d.get('names'))
+#-----------------------------------
+#d={'name':'unknown','age':'unknown'}
+# if 'name' in d:
+#     print("present")
+# else:
+#     print("not present")
+if d.get('name'):
+    print("present")
+else:
+    print("not present")
+#-------------------------
+#clear() method removes all items from the dic
+# d={'name':'unknown','age':'unknown'}
+# d.clear()
+# print(d)
+#---------------------------------
+# d={'name':'unknown','age':'unknown'}
+# d1=d.copy()
+# print(d1)
+#------------------------------------
+d={'name':'unknown','age':'unknown'}
+# d1=d #its not copy of d(its aaign d value to d1,1 value delete from d1,it will delete from d also)
+# print(d1.popitem()) 
+# print(d)
+# print(d1)
+d1=d.copy()
+print(d1.popitem()) #delete only from d1 not from d...d as it is
+print(d1)
+print(d)
+#---------------------------
+#check d and d1 are different
+print(d1 is d) #ans false means both are diff
+
+output:python_tutorial/excercise_5_dictionaries
+$ python from_keys_get_clear_method_dic.py
+present
+('age', 'unknown')
+{'name': 'unknown'}
+{'name': 'unknown', 'age': 'unknown'}
+False
+..............................................................................................
+1(f)...#more about get metbod=method return the vaue of item with specified key
+user={'name':'pooja','age':34,'age':74}
+print(user)#print age 74 bcoz key same hence print last key
+print(user.get('name'))
+print(user.get('names'))
+print(user.get('fav','not found'))
+
+output:
+pooja@amit-PC MINGW64 /e/python_tutorial/excercise_5_dictionaries
+$ python more_about_get_method.py
+{'name': 'pooja', 'age': 74}
+pooja
+None
+not found
+..........................................................................................
+1(g)...#write aprogram to return a cube of no using dic
+def cube_no(no):
+    cube={}
+    for i in range(1,no+1):
+        cube[i]=i**3
+    return cube
+print(cube_no(4))
+
+output:/python_tutorial/excercise_5_dictionaries
+$ python dic_cube.py
+{1: 1, 2: 8, 3: 27, 4: 64}
+................................................................................................
+1(h)...#word counter
+def char_count(s):
+    count={}
+    for i in s:
+        count[i]=s.count(i)
+    return count
+print(char_count('pooja'))
+
+output:python_tutorial/excercise_5_dictionaries
+$ python  word_char_count_dic.py
+{'p': 1, 'o': 2, 'j': 1, 'a': 1}
+..............................................................................................
+1(i)...#print seperated output in dic by user input
+user={}
+name=input("enter your name:") 
+age=input("enter your age:")
+fav_movies=input("enter your fav movies seperated by comma:").split(",")
+fav_songs=input("enter your fav songs seperated by comma:").split(",")
+user['name']=name
+user['age']=age
+user['fav_movies']=fav_movies
+user['fav_songs']=fav_songs
+# print(user)
+for key,value in user.items():
+    print(f"{key}:{value}")
+
+output:python_tutorial/excercise_5_dictionaries
+$ python user_input_dic.py
+enter your name:pooja
+enter your age:23
+enter your fav movies seperated by comma:ddljs,sathiya
+enter your fav songs seperated by comma:ha sagari,ghdf
+name:pooja
+age:23
+fav_movies:['ddljs', 'sathiya']
+fav_songs:['ha sagari', 'ghdf']
+......................................................................................
+1(j)...#dictionry summury
+# d={'name':'pooja','age':23}#name and age are key....pooja and 24 are value
+# print(d)#there is no indexing in dictionary
+# d1=dict(name='harshit',age=23) 
+# print(d1)
+d3={
+    'name':'pooja',
+    'age':23,
+    'fav_mov':['ddlj','fun'],
+    'fav_song':['tu hi re','angat mazi ya'],
+    }
+print(d3)
+#how to access data from dic
+print(d3['name'])
+# print(d1['age'])
+#add data to empty dic
+# empty_dic={}
+# empty_dic['key1']='value2'
+# empty_dic['key2']='value2'
+# print(empty_dic)
+#check key present in dic using in
+# if 'names' in d3:
+#     print("present")
+# else:
+#     print("not present")
+#how to iterated over dictionary
+for key,value in d3.items():
+    print(f"{key} and {value}")
+#print all keys
+# for i in d3:
+#     print(i)
+#to print all values
+# for i in d3.values():
+#     print(i)
+#most common method in dict(get method)
+# print(d3['name'])
+# print(d3.get('name'))#method is used to acces key it returns none when key is not present in dic
+# print(d3.get('names'))
+#to delete item
+#pop ....take 1 argument which is key name
+# popped=d3.pop('name')
+# print(popped)
+# print(d3)
+#popitem...it delete randomely items
+popped_item=d3.popitem()
+print(popped_item)
+print(d3)
+
+output:python_tutorial/excercise_5_dictionaries
+$ python  summury.py
+{'name': 'pooja', 'age': 23, 'fav_mov': ['ddlj', 'fun'], 'fav_song': ['tu hi re', 'angat mazi ya']}
+pooja
+name and pooja
+age and 23
+fav_mov and ['ddlj', 'fun']
+fav_song and ['tu hi re', 'angat mazi ya']
+('fav_song', ['tu hi re', 'angat mazi ya'])
+{'name': 'pooja', 'age': 23, 'fav_mov': ['ddlj', 'fun']}
+.......................................................................................
+1(k)...

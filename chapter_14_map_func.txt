@@ -1,0 +1,302 @@
+1(a)....map function
+#map function
+numbers=[1,2,3,4,5]
+def square(a):
+    return a**2
+# squars=list(map(square,numbers))
+# print(squars)
+#-----------------------------------
+#by using list comprehension
+# numbers=[1,2,3,4,5]
+# squars_2=[i**2 for i in numbers]
+# print(squars_2)
+#--------------------------
+# numbers=[1,2,3,4,5]
+nwe_list=[]
+# def square(a):
+#     nwe_list=[]
+#     return a**2
+for num in numbers:
+    nwe_list.append(square(num))
+print(nwe_list)
+#---------------------------
+#------------------------------
+# names=['abc','abcd','abcde']
+# length=map(len,names)
+# print(length)
+# for i in length: #map object pe 1 hi bar loop chala sakte h
+#     print(i)
+#--------------------------------------
+names=['abc','abcd','abcde']
+length=list(map(len,names))
+print(length)
+
+
+output:/e/python_tutorial/excercise_10_enumerate_function
+$ python map_function.py
+[1, 4, 9, 16, 25]
+[3, 4, 5]
+..........................................................................
+1(b)....
+#filter function
+# def is_even(a):
+#     return a%2==0
+# numbers=[1,2,3,4,5,6,7,8,9]
+# evens=tuple(filter(is_even,numbers))
+# print(evens)
+#---------------------
+#by using lambda expression
+# def is_even(a):
+#     return a%2==0
+# numbers=[1,2,3,4,5,6,7,8,9]
+# evens=tuple(filter(lambda a:a%2==0,numbers)) 
+# print(evens)
+#--------------------------
+#by using list comprehension
+numbers=[1,2,3,4,5,6,7,8,9]
+new_even=[i for i in numbers if i%2==0]
+print(new_even)
+#-------------------------------
+
+
+output:/e/python_tutorial/excercise_10_enumerate_function
+$ python filter.py
+[2, 4, 6, 8]
+...................................................................................
+1(c)#iterator vs iterable
+# numbers=[1,2,3,4,5] #tuple,string are iterables
+# squars=map(lambda a:a**2,numbers) #iterator
+# print(squars) #it returns map object,map object pe loop chala sakte he
+# # for i in numbers:
+# for i in squars:
+#     print(i)
+#---------------------------------
+#how to execute for loop
+#first call iter function
+#second call next function
+numberss=[1,2,3,4,5]
+num_iter=iter(numberss)
+print(next(num_iter)) #output 1
+print(next(num_iter)) #output 2
+print(next(num_iter)) 
+print(next(num_iter)) 
+print(next(num_iter)) 
+# print(next(num_iter))  #output stop iteration
+# print(next(numberss)) #numberss is not an iterator
+
+
+output:/e/python_tutorial/excercise_10_enumerate_function
+$ python iterator_vs_iterable.py
+1
+2
+3
+4
+5
+.............................................................................
+1(c)...#zip function
+user_id=['user1','user2','user3']
+names=['pooja','amit','raja']
+last_name=['ganvir','taksande','sharma']
+print(list(zip(user_id,names,last_name)))
+# print(dict(zip(user_id,names,last_name))) #error because dict has required only length 2
+print(dict(zip(user_id,names)))
+#---------------------------------
+examples=[('a',1),('b',2)]
+print(dict(examples))
+
+output:/e/python_tutorial/excercise_10_enumerate_function
+$ python zip_function.py
+[('user1', 'pooja', 'ganvir'), ('user2', 'amit', 'taksande'), ('user3', 'raja', 'sharma')]
+{'user1': 'pooja', 'user2': 'amit', 'user3': 'raja'}
+{'a': 1, 'b': 2}
+.....................................................................................
+1(d)...#zip_func_Part_2
+# l1=[1,2,3,4]
+# l2=[5,6,7,8]
+l3=[(1,5),(2,6),(3,7),(4,8)] #convert l3 to l1 l2
+#zip with * operator
+# print(list(zip(*l3)))
+# l1,l2=list(zip(*l3))
+# print(list(l1))
+# print(list(l2))
+#----------------------------------------
+#program for find greatest of l1 l2 pair
+l1=[1,2,3,4]
+l2=[5,6,7,8]
+new_list=[]
+for pair in zip(l1,l2):
+    new_list.append(max(pair))
+print(new_list)
+
+output:/e/python_tutorial/excercise_10_enumerate_function
+$ python zip_func_part_2.py
+[5, 6, 7, 8]
+...........................................................................................
+1(e)...#find average
+#[1,2,3],[4,5,6],[7,8,9]
+# def average_finder(l1,l2): #this is only for 2 list
+#     average=[]
+#     for pair in zip(l1,l2):
+#         average.append(sum(pair)/len(pair))
+#     return average
+# print(average_finder([1,2,3],[4,5,6]))
+#-----------------------------------
+#find avg of n number of list
+def average_finder(*args): #this is only for 2 list
+    average=[]
+    for pair in zip(*args): #*args use for unpacking purpose...args=([],[])
+        average.append(sum(pair)/len(pair))
+    return average
+print(average_finder([1,2,3],[4,5,6],[7,8,9]))
+#--------------------------------------------
+#find avg using single line
+# def average_finder(*args):
+average_fin=lambda *args:[sum(pair)/len(pair) for pair in zip(*args)]
+print(average_fin([1,2,3],[4,5,6],[7,8,9]))
+
+output:/e/python_tutorial/excercise_10_enumerate_function
+$ python find_avg_using_zip_func.py
+[4.0, 5.0, 6.0]
+[4.0, 5.0, 6.0]
+....................................................................................
+1(f)...#any and all function
+#write a program to check all eve no or not(by using all function)
+# numbers1=[2,4,6,8,10]
+# numbers2=[1,3,5,7,9]
+# even_no=[]
+# for num in numbers1:
+#     if num%2==0:
+#         even_no.append(True)
+# print(even_no)
+#-------------------------------
+# even_no1=[]
+# for num in numbers1:
+#     even_no1.append(num%2==0)
+# print(even_no1)
+# print(all([True,True,True,True,True]))
+#-------------------------------
+#by using list comprehension and all function
+numbers1=[2,4,6,8,10]
+print(all([num%2==0 for num in numbers1]))
+#-----------------------------------
+#any function:any check any true no and print output true
+numbers3=[1,53,10,5,43]
+print(any([num%2==0 for num in numbers3]))
+
+output:/e/python_tutorial/excercise_10_enumerate_function
+$ python any_and_all_func.py
+True
+True
+...........................................................................
+1(g)...#any a nd all practice
+def total_sum(*args):
+    if all([type(arg)==int or type(arg)==float for arg in args]):
+        total=0
+        for num in args:
+            total+=num
+        return total
+    else:
+        return "wrong input"
+# print(total_sum(1,2,3,4,5.0,'harshit',['pooja']))
+print(total_sum(1,2,3,4,5.0))
+
+output:/e/python_tutorial/excercise_10_enumerate_function
+$ python any_and_all_practice.py
+15.0
+.............................................................................
+1(h)...#advance min and max func
+numbers=[1,4,2,8,10]
+print(max(numbers))
+print(min(numbers))
+#-------------------------
+def func(item):
+    return len(item)
+names=['pooja','harshit','vaishishtha','z']
+print(max(names,key=func))
+print(min(names,key=func))
+#--------------------------
+#by using lambda function
+names=['pooja','harshit','vaishishtha','z']
+print(max(names,key=lambda item:len(item)))
+#---------------------------------------------
+# students2=[
+#     {'name':'harshit','score':90,'age':24},
+#     {'name':'pooja','score':94,'age':23},
+#     {'name':'amit','score':56,'age':14}
+# ]
+# print(students2)
+# # print(max(students2,key=lambda item:item.get('score')))
+# print(max(students2,key=lambda item:item.get('score'))['name'])
+# print(max(students2,key=lambda item:item.get('age'))['name'])
+#--------------------------------------------------
+students1= {
+    'harshit':{'score':78,'age':24},
+    'pooja':{'score':70,'age':64},
+    'raja':{'score':98,'age':26},
+    'ronitt':{'score':88,'age':44},
+}
+print(max(students1,key=lambda item:students1[item]['score']))
+print(max(students1,key=lambda item:students1[item]['age'])) #according to age
+
+output:/e/python_tutorial/excercise_10_enumerate_function
+$ python advance_min_and_max_func.py
+10
+1
+vaishishtha
+z
+vaishishtha
+raja
+pooja
+.........................................................................................
+1(i)...#advance sorted function
+# fruits=['mango','apple','pinaple','banana','peru']  #we can sort only in list
+# fruits.sort()#sorted func sort according to alphabet
+# print(fruits)
+#--------------------------
+# #we can't sort in tuple ###error
+fruits=('mango','apple','pinaple','banana','peru') 
+# fruits.sort()
+print(sorted(fruits))
+print(fruits)
+#------------------------------
+# fruits2={'mango','apple','pinaple','banana','peru'}
+# print(sorted(fruits2))
+#-----------------------------------
+guitar=[
+    {'model':'yamaha f310','price':8400},
+    {'model':'faith naptune','price':6900},
+    {'model':'faith apolo venus','price':5400},
+    {'model':'tailor 84ce','price':10400}
+]
+# print(guitar)
+print(sorted(guitar,key=lambda item:item.get('price'))) #sorted according to price
+print(sorted(guitar,key=lambda item:item['price']))
+print(sorted(guitar,key=lambda item:item['price'],reverse=True))#sorted reverse list
+
+output:/e/python_tutorial/excercise_10_enumerate_function
+$ python advance_sorted_function.py
+['apple', 'banana', 'mango', 'peru', 'pinaple']
+('mango', 'apple', 'pinaple', 'banana', 'peru')
+[{'model': 'faith apolo venus', 'price': 5400}, {'model': 'faith naptune', 'price': 6900}, {'model': 'yamaha f310', 'price': 8400}, {'model': 'tailor 84ce', 'price': 10400}]
+...........................................................................................
+1(j)...#what is docstring
+# def add(a,b):
+#     '''this func takes 2 no.. and return their sum'''
+#     return a+b
+# print(add(2,3))
+# print(add.__doc__)
+#-----------------
+#docstring of built in func
+#len,sum,min,max,sorted
+# print(len.__doc__)
+# print(sum.__doc__)
+#-------------------------
+#help func
+print(help(sum))
+
+
+output:/e/python_tutorial/excercise_10_enumerate_function
+$ python more_about_function.py
+Return the number of items in a container.
+.............................................................................................
+1(k)...

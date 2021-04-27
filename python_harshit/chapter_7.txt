@@ -1,0 +1,879 @@
+1(a)....#list:we can store anything in list(int,float,string)
+numbers=[1,2,3,4,5]
+print(numbers)
+print(numbers[2])
+
+words=["word1","word2","word3","word4","word5"]
+print(words)
+print(words[0])
+print(words[:1])
+
+mixed=[1,2,3,"pooja",1.2,"ganvir",None] #(mixed of integer,float,string and special)
+print(mixed)
+print(mixed[-1]) #print last value in list
+mixed[1]="two" #how to change data in list
+print(mixed)
+mixed[4:]=["pooja","amit","niven"] #change aal content from list 4 to 6
+print(mixed)
+
+output:/excercise_3
+$ python list_intro.py
+[1, 2, 3, 'pooja', 1.2, 'ganvir', None]
+None
+[1, 'two', 3, 'pooja', 1.2, 'ganvir', None]
+[1, 'two', 3, 'pooja', 'pooja', 'amit', 'niven']
+........................................................................
+1(b)...# #add data to list
+# fruits=['mango','anar','peru']
+# fruits.append('banana') #append method is used to add the items at last
+# print(fruits)
+#............................
+fruits=[]
+fruits.append("grapes")
+fruits.append("manggop")
+print(fruits)
+
+output:excercise_3
+$ python add_data_to_list.py
+['grapes', 'manggop']
+..................................................................
+1(c)...#by using insert method we can add element at any position but by using append method we can add elemet only atlast position
+fruits=["mango","anar"]
+fruits.insert(1,"babana") #1 is the position where we add data
+print(fruits)
+
+output:/excercise_3
+$ python more_methos_to_add_method.py
+['mango', 'babana', 'anar']
+...................................................................
+1(d)...concatinate two string in list
+fruit1=["mango","beat","pinaple"]
+fruit2=["banana","pear"]
+fruit=fruit1+fruit2
+print(fruit)
+
+output:/excercise_3
+$ python concatinate_string_list.py
+['mango', 'beat', 'pinaple', 'banana', 'pear']
+......................................................
+1(e).....# ................suppose we want to add fruit2 in fruit1 then use extend method................
+fruit1=["mango","beat","pinaple"]
+fruit2=["banana","pear"]
+fruit1.extend(fruit2)
+print(fruit1)
+
+output:/excercise_3
+$ python concatinate_string_list.py
+['mango', 'beat', 'pinaple', 'banana', 'pear']
+
+................................................................
+1(f).....add data and delete data from list
+#1..pop method is use to delete element from list...u dont pass the argument it will delete last element
+fruit1=["anar","mango","apple","banana","kivi","apple"]
+#fruit1.pop() #delete last element apple from list fruit1 becoz we dont pass the argument
+#print(fruit1)
+#fruit1.pop(1) #delete element at 1the position i.e "mango" 
+#print(fruit1)
+#2..del operater is used to delete element from list
+# del fruit1[2] 
+# print(fruit1)
+#3...remove 
+# fruit1.remove("kivi") #it will remove kivi from list
+# print(fruit1)
+fruit1.remove("apple") #it will remove 1st apple from list
+print(fruit1)
+
+output:/excercise_3
+$ python delete_data_from_list.py
+['anar', 'mango', 'banana', 'kivi', 'apple']
+...............................................................
+1(g)....#how to check element present in list or not
+#check mango present in list or not 
+# fruits=["kiwi","anar","mango","banana","papaya","pear"]
+# if "mango" in fruits:
+#     print("mango is present")
+# else:
+#     print("mango is not present")
+#.............................................................
+#check pinaple present in list or not
+fruits=["kiwi","anar","mango","banana","papaya","pear"]
+if "pinaple" in fruits:
+    print("pinaple is present")
+else:
+    print("pinaple is not present")
+
+output:/excercise_3
+$ python in_keyword_list.py
+pinaple is not present
+......................................................
+1(h)....more function used in list count,sort,sorted,clear,copy
+
+#1..count methout use for count element in list
+fruits=["banana","kiwi","anjir","pinaple","kiwi","banana","banana","apple","papaya"]
+# print(fruits.count("banana"))
+# print(fruits.count("kiwi"))
+#....................................
+#2..sort method use for arrange  element in alphabetical order
+# fruits.sort()
+# print(fruits)
+# numbers=[10,5,7,2,4,0,6]
+# numbers.sort()
+# print(numbers)
+#.................................
+#3..sorted function
+# numbers=[10,5,7,2,4,0,6]
+# print(sorted(numbers))
+# print(numbers)
+#....................................
+#4...clear function :-use for empty list
+# numbers=[10,5,7,2,4,0,6]
+# numbers.clear()
+# print(numbers)
+#.....................................
+#copy method
+numbers=[10,5,7,2,4,0,6]
+numbers_copy=numbers.copy()
+print(numbers_copy)
+
+output:excercise_3
+$ python count_sort_reverse_clear_copy_method_list.py
+[10, 5, 7, 2, 4, 0, 6]
+......................................................................................
+1(i)...#== compare elements of two list (if the elements are same return true otherwise false)
+#is compare memory location (if memory locations are same then true otherwise false)
+fruits1=["mango","banana","kiwi","pear","pinaple","papaya","apple"]
+fruits2=["pear","pinaple","papaya","apple"]
+fruits3=["pear","pinaple","papaya","apple"]
+print(fruits2==fruits3) #compare elements #return true bcoz elements are same
+print(fruits2 is fruits3) #compare memory location (memory loc of fruits2 and fruits3 are diffrent hence return false)
+
+output:/excercise_3
+$ python is_equalto_list.py
+True
+False
+...........................................................................
+1(j)...#split method the split() method splits a string in to a list
+# user_info="pooja ganvir 23".split()
+# print(user_info)
+# user_info="pooja..ganvir..23".split("..")
+# print(user_info)
+# user_info="pooja@@ganvir@@23".split("@@")
+# print(user_info)
+# user_info="pooja,ganvir,23".split(",")
+# print(user_info)
+#-----------------------------
+# name,age="pooja 23".split()
+# print(name)
+# print(age)
+#-----------------------------
+# name,age=input("enter your name and age").split()
+# print(name)
+# print(age)
+#...................................
+#join method join method is astring method and returns a string in which elements of sequence have been joined by str seperater
+user_info=["pooja","24"] #24 mandatory in string
+print(",".join(user_info))
+
+output:/excercise_3
+$ python split_and_join_method.py
+pooja,24
+...........................................................................
+1(k)...#array-> ordered collection of items
+#c,c++,java
+#array store same type of data(such int,string)
+
+#list->ordered collections of items/flexible
+#list store any type of data(generic data)
+#python array module(not used in python)->store only fixed type of data 
+#numpy array used in python-- use in data science
+#javascript array almost same as python list
+.....................................................................
+1(l)...#list vs string
+#strings are immutable (immutable means u can not change your string)
+#we can not add character in string
+#list are muttable
+s="string"
+# s.title() #title method covert 1st charecter of word to uppercase letter
+# print(s) #original string cant be change
+# p=s.title() #this is new string (u can change in new string)
+# print(p) 
+l=["word1","word2","word3"]
+l.pop()
+print(l) #directly change original string
+#we add character in list
+l.append("word3")
+print(l)
+
+output:/excercise_3
+$ python list_vs_string.py
+['word1', 'word2']
+['word1', 'word2', 'word3']
+....................................................................
+1(m)...#looping in list
+fruits=["anar","banana","apple","kiwi","orange","papaya","pinaple"]
+# for i in fruits:
+#     print(i)
+#----------------------------------------
+i=0
+while i<len(fruits):
+    print(fruits[i])
+    i=i+1
+
+output:/excercise_3
+$ python looping_in_list.py
+anar
+banana
+apple
+kiwi
+orange
+papaya
+pinaple
+...............................................................................
+1(n)...#list insight list
+# matrix=[[1,2,3],[4,5,6],[7,8,9]]
+# #how many items present in list=3 list
+# print(matrix[0])
+# print(matrix[2])
+#---------------------------------
+# matrix=[[1,2,3],[4,5,6],[7,8,9]]
+# for i in matrix:
+#     print(i) #print list insight matrix list
+#-------------------------------
+# matrix=[[1,2,3],[4,5,6],[7,8,9]]  #2 d list(list insight list)
+# for sublist in matrix: #it will print insight list
+#     for i in sublist: #it will print the content of list
+#         print(i)
+#---------------------------------
+#how to access  elements of list(matrix)
+matrix=[[1,2,3],[4,5,6],[7,8,9]]
+print(matrix[1][1]) #suppose we have to accesss 5()
+print(matrix[2][1])
+
+output:/excercise_3
+$ python list_insight_list.py
+5
+8
+...............................................................................
+1(o)...#type function shows what type of data used
+s="string"
+print(type(s)) 
+n=12
+print(type(n))
+matrix=[[1,2,3],[4,5,6],[7,8,9]]
+print(type(matrix))
+
+output:/excercise_3
+$ python type.py
+<class 'str'>
+<class 'int'>
+<class 'list'>
+..............................................................................
+1(p)...#generate list with range function
+# number=list(range(1,11))
+# print(number)
+#----------------------
+#something more about pop method
+# number=list(range(1,11))
+# number.pop() #pop fun delete last element i.e 10
+# print(number)
+# print(number.pop()) #it will return deleted value -- jab jarurat pade tab use kar sakte h deleted value ko
+#----------------------
+#index method=>find pertikular element position
+# number=list(range(1,11))
+number=[1,2,3,4,5,6,7,8,9,10,1]#by default index search from 0th position
+print(number.index(1))# find 1element position#
+print(number.index(1,2)) #find the 1 last element(2 is used for find 1 after 2nd position)
+#----------------------
+number=[1,2,3,4,5,6,7,8,9,10,1,7,8,9,10,1]#by default index search from 0th position
+print(number.index(1,11)) #find last 1 after 11 position
+# print(number.index(1,11,14)) #1 ionfind 1,11 for=start pos to find 1,14=find 1 up to 14 posit
+
+output:/excercise_3
+$ python more_about_list_range_index.py
+0
+10
+15
+..................................................................................
+1(q)....#pass list to a function
+numbers=[1,2,3,4,5,6,7,8,9,10]
+def negative_list(l):
+    negative=[]
+    for i in l:
+        negative.append(-i)
+    return negative
+print(negative_list(numbers))
+
+output:/excercise_3
+$ python pass_list_to_function.py
+[-1, -2, -3, -4, -5, -6, -7, -8, -9, -10]
+.................................................................................
+1(r)...#define a function which will take list containing numbers as input
+#and return list containing square of every element
+number=[1,2,3,4,5]
+def square_list(l):
+    square=[]
+    for i in l:
+        square.append(i*i)
+    return square
+print(square_list(number))
+#-----------------------------------
+def square_list(l):
+    square=[]
+    for i in l:
+        square.append(i*i)
+    return square
+numbers=list(range(1,6))
+print(square_list(numbers))
+
+
+output:/excercise_3
+$ python list_containing_square_of_every_element.py
+[1, 4, 9, 16, 25]
+.................................................................................
+1(s)...program reverse a list using reverse method,list slicecing,pop and append method
+# def rev_list(l):
+#     l.reverse() #reverse string by using reverse method
+#     return l
+# number=[1,2,3,4,5]
+# print(rev_list(number))
+#-----------------------------
+# def rev_list(l):
+#     return l[::-1] #reverse string by using list slicing
+# numbers=[1,2,3,4,5]
+# print(rev_list(numbers))   
+#------------------------------
+#reverse string by using pop and append method
+def rev_list(l):
+    rev=[]
+    for i in range(len(l)):
+        pop_item=l.pop()
+        rev.append(pop_item)
+    return rev
+numbers=[1,2,3,4,5]
+print(rev_list(numbers))
+
+output:/excercise_3
+$ python return_reverse_list_fun.py
+[5, 4, 3, 2, 1]
+...................................................................................
+1(t)...return of every elements reverse word=["abc","def","ghi"] 
+ef rev_string(l):
+    element=[]
+    for subelement in l:
+        element.append(subelement[::-1])
+    return element
+
+words=["abc","def","ghi"]
+print(rev_string(words))
+----------------------------
+# def rev_string(l):
+#     rev=[]
+#     for i in range(len(l)):
+#         pop_item=l.pop()
+#         rev.append(pop_item)
+#     return rev
+# words=["abc","def","ghi"]
+# print(rev_string(words))
+
+output:/excercise_3
+$ python reverse_string_list_func.py
+['cba', 'fed', 'ihg']
+..................................................................................
+1(u)....#filter odd even...define function...input list [1,2,3,4,5,6]...[[2, 4, 6], [1, 3, 5]]
+def odd_even(l):
+    even_list=[]
+    odd_list=[]
+    for i in l:
+        if (i%2)==0:
+            even_list.append(i)
+        else:
+            odd_list.append(i)
+    output=[even_list,odd_list]
+    return output
+number=[1,2,3,4,5,6]
+print(odd_even(number))
+
+output:/excercise_3
+$ python  odd_even_list_fun.py
+[[2, 4, 6], [1, 3, 5]]
+....................................................................................
+1(v)...#commen element finder function...take 2 list as input...output common element of both list..[1,2,3],[1,2,4]....[1, 2]
+def common_filter(l1,l2):
+    comman=[]
+    for i in l1:
+    # for i in range(len(l1)):
+        if i in l2:
+            comman.append(i)
+    return comman
+number1,number2=[1,2,3],[1,2,4]
+print(common_filter(number1,number2))
+
+output:/excercise_3
+$ python common_no_from_two_list.py
+[1, 2]
+...........................................................................
+1(w)...#min and max function
+# numbers=[55,90,12]
+# print(min(numbers))
+# print(max(numbers)) #max func is used for finding greatest no
+#----------------------------------
+def min_max_diff(l):
+    return (max(l) - min(l))
+numbers=[10,1,9]
+print(min_max_diff(numbers))
+
+output:/excercise_3
+$ python min_max_function.py
+9
+...............................................................................
+1(x)...#count list insight list using type func
+def count_list_type(l):
+    count=0 
+    for i in l:
+        if type(i) == list:
+            count=count+1
+    return count
+number=[1,2,3,[1,2],[3,4,5]]
+print(count_list_type(number))
+
+output:excercise_3
+$ python list_insight_list_count_type.py
+2
+.....................................................................................
+1(y)...#write a python program to sum all the item in list
+def sum_all_element(l):
+    total=0
+    for i in l:
+        total=total+i
+    return total
+numbers=[1,2,3,4,5]
+print(sum_all_element(numbers)):
+
+output:
+/excercise_3
+$ python sum_all_element_list1.py
+15
+.......................................................................................
+1(z)...#program to multply all the items in list
+def mult_list(l):
+    total=1
+    for i in l:
+        total=total*i
+    return total
+number=[1,2,3,4]
+print(mult_list(number))
+
+output:/excercise_3
+$ python mul_all_element_list1.py
+24
+........................................................................................
+2(a)...#write a program to get largest no from list
+# def largest_no(l):
+#     return max(l)
+# number=[1,4,90,67]
+# print(largest_no(number))
+#--------------------------
+def largest_no(l):
+    great=0
+    for i in l:
+        if i>great:
+            great=i
+    return great
+    
+number=[1,4,90,1020]
+print(largest_no(number))  
+
+output:/excercise_3
+$ python largest_number_list1.py
+1020
+.......................................................................................
+2(b)...#find the smallest element in list
+# def smallest_num(l):
+#     return min(l)
+# number=[1,3,5,-9]
+# print(smallest_num(number))
+#-------------------------------
+# def smallest_num(l):
+#     small=l[0]
+#     for i in range(len(l)):
+#         if l[i]<small:
+#             small=l[i]
+#     return small
+# number=[6,3,5,10]   
+# print(smallest_num(number))
+#-----------------------------
+def smallest_num(l):
+    small=l[0]
+    for i in l:
+        if i< small:
+            small=i
+    return small
+number=[6,3,5,10]   
+print(smallest_num(number))
+
+output:/excercise_3
+$ python smallest_number_list1.py
+-1
+...............................................................................
+2(c)...#program for count 1st and last character same in list
+def count_char_same(l):
+    t=0
+    for i in l:
+        if i[0]==i[-1]:
+            t=t+1
+    return t
+words=["poja","aba","abca","jaban","poop"]
+print(count_char_same(words))
+
+output:/excercise_3
+$ python count_1st_and_last_charater_same_list1.py
+3
+...............................................................................
+2(d)...#program for remove duplicate from list
+def duplicate_remove(l):
+    lt=[]
+    for i in l:
+        if i not in lt:
+            lt.append(i)
+    return lt
+num=[10,20,10,30]
+print(duplicate_remove(num))
+
+output:/excercise_3
+$ python remove_duplicate_list1.py
+[10, 20, 30]
+.................................................................................
+2(e)...#write a program to check list empty or not
+def empty_list(l):
+     # return type(l)
+     for i in l:
+          if i in l:
+               return "not empty"
+     return "empty"     
+num=["a"]
+print(empty_list(num))
+#------------------------------
+# def empty_list(l):
+#      if len(l)==0:
+#           return "empty"
+#      return "not empty"
+# num=[]     
+# print(empty_list(num))
+#-----------------------------
+# def empty_list(l):
+#      if not l:
+#           return "empty"
+#      return "not empty"      
+# num=[]     
+# print(empty_list(num))
+
+output:/excercise_3
+$ python empty_list1.py
+not empty
+...................................................................................
+2(f)...#write a python code to clone or copy a list
+# def colone_list(l):
+#     clone_copy=l.copy() #by using copy method
+#     return clone_copy
+# num=[1,2,3,4,5]
+# print(colone_list(num))
+#-------------------------------
+def colone_list(l):
+    clone=[]
+    for i in l:
+        clone.append(i) #clone using append method
+    return clone
+num=["pooja","amit","niven"]
+print(num)
+print(colone_list(num))
+
+output:/excercise_3
+$ python copy_or_clone_list1.py
+['pooja', 'amit', 'niven']
+['pooja', 'amit', 'niven']
+...................................................................................
+2(g)...#Write a Python program to find the list of words that are longer than n from a given list of words
+# def len_longer(n,l):
+#     longer=[]
+#     for i in l:
+#         if len(i)> n:
+#           longer.append(i)
+#     return longer
+# num=["pooja","amit","vivek","banduji","abc","def"]
+# print(len_longer(5,num))
+#-------------------------------
+def len_longer(n,str):
+    longer=[]
+    txt=str.split(" ")
+    for i in txt:
+        if len(i)> n:
+          longer.append(i)
+    return longer
+print(len_longer(3,"this is pooja amit ganvir"))
+
+output:/excercise_3
+$ python length_longer.py
+['this', 'pooja', 'amit', 'ganvir']
+..........................................................................................
+2(h)...#Write a Python function that takes two lists and returns True if they have at least one common member
+# def common_no(l1,l2):
+#     for i in l1:
+#         if i in l2:
+#             return "common"
+#     return "not common"
+# output1,output2=[1,2,3],[1,0,5]
+# # output2=[0,2,5]
+# print(common_no(output1,output2))
+#-------------------------------------
+def common_no(l1,l2):
+    for i in l1:
+        for j in l2:
+            if i==j:
+                # return "common"
+                return True
+        # return "not common"
+        return False
+output1,output2=[1,2,3],[1,0,5]
+# output2=[0,2,5]
+print(common_no(output1,output2))       
+
+output:/excercise_3/practice_excercise_3
+$ python common_no_in_two_list.py
+True
+..........................................................................
+2(i)...#Write a Python program to print a specified list after removing the 0th, 4th and 5th elements.
+#Sample List : ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+#Expected Output : ['Green', 'White', 'Black']
+# def remove_specific_ele(l):
+#     un=['Red','Pink', 'Yellow'] #not given position directly given element
+#     filter_list=[]
+#     for i in l:
+#         if i not in un:
+#             filter_list.append(i)
+#     return filter_list
+# word=['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+# print(remove_specific_ele(word))
+#-----------------------
+a = [1, 2, 5, 6, 7]
+rem = [1, 3]
+for i in sorted(rem, reverse=True): 
+    del a[i]
+print(a)
+
+output:/excercise_3/practice_excercise_3
+$ python remove_specific_element.py
+[1, 5, 7]
+....................................................................................
+2(j)...#Write a Python program to print the numbers of a specified list after removing even numbers from it. 
+def removing_even(l):
+    # common=[]
+    for i in l:
+        if (i%2==0):
+            l.remove(i)
+    return l
+num=[1,2,3,4,5,6,7,88,100,11,200,211] #output wrong becoz print 100
+# num=[11, 22, 33, 44, 55] #output isc orrect 
+print(removing_even(num))
+#------------------------
+
+output:excercise_3/practice_excercise_3
+$ python removing_even_no_from_list.py
+[1, 3, 5, 7, 100, 11, 211]
+........................................................................................
+2(k)...def square_first_last(l):
+    lic=[]
+    for i in l:
+        lic.append(i**2)
+    print (lic[:5])
+    print (lic[-5:])
+num=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+square_first_last(num)
+output:/excercise_3/practice_excercise_3
+$ python list_of_1st_and_last_5_element_sqr.py
+[1, 4, 9, 16, 25]
+[256, 289, 324, 361, 400]
+........................................................................................
+2(l)...#Write a Python program to generate and print a list of first and last 5 elements where the values are square of numbers between 1 and 30
+def square_exclude_first_five():
+    lic=[]
+    for i in range(1,21):
+        lic.append(i**2)
+    print(lic[5:])
+# num=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+square_exclude_first_five()
+
+output:/excercise_3/practice_excercise_3
+$ python except_firstfive_no_print_sqr.py
+[36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400]
+..............................................................................................
+2(m)...#Write a Python program to get the difference between the two lists.
+#a=[1,2,3,4,5]
+#b=[1,5,6,7,8,9]
+a=[1, 3, 5, 7, 9]
+b=[1, 2, 4, 6, 7, 8]
+diff_a_b=list(set(a)-set(b))
+diff_b_a=list(set(b)-set(a))
+total_diff=diff_a_b + diff_b_a
+print(total_diff)
+output:excercise_3/practice_excercise_3
+$ python diff_of_two_list.py
+[9, 3, 5, 8, 2, 4, 6]
+............................................................................................
+2(n)...#Write a Python program access the index of a list. 
+# num=[10,20,30,40,50]
+# for i in num:
+#     print(i,end=" ")
+#-----------------------------------
+num=[10,20,30,40,50]
+for i in range(len(num)):
+    print(i,end=" ")
+    print(num[i])
+
+output:/excercise_3/practice_excercise_3
+$ python access_index_of_list.py
+0 10
+1 20
+2 30
+3 40
+4 50
+................................................................................................
+2(o)...#Write a Python program to convert a list of characters into a string.
+chasr=["a","b","c","d"]
+string="".join(chasr)
+print(string)
+
+output:/excercise_3/practice_excercise_3
+$ python convert_list_of_charecter_to_string.py
+abcd
+.............................................................................................
+2(p)...#Write a Python program to find the index of an item in a specified list. 
+num=[10,23,45,16,70]
+print(num.index(45))
+
+output:excercise_3/practice_excercise_3
+$ python find_index_of_specified_list.py
+2
+..............................................................................................
+2(q)...#Write a Python program to flatten a shallow list.(add all sublist in one list)
+def flatten_shallow(l):
+    flat=[]
+    for sublist in l:
+        for i in sublist:
+            flat.append(i)
+    return flat
+# num=[[1,2,3],[4,5,6],[7,8,9]]
+num=[[1,-2,-9],[4,5,-8],[7,-7,-9]]
+print(flatten_shallow(num))
+
+output:excercise_3/practice_excercise_3
+$ python flatten_shallow_list.py
+[1, -2, -9, 4, 5, -8, 7, -7, -9]
+..............................................................................................
+2(r)...#Write a Python program to append a list to the second list.
+# def list_append(l1,l2):
+#     for i in l1:
+#         l2.append(i)
+#     return l2
+# list1,list2=[1,2,3],["a","b","c"]
+# print(list_append(list1,list2))
+#---------------------------
+def list_append(l1,l2):
+    return l1+l2
+list1=["a","b","c"]
+list2=[1,2,3]
+print(list_append(list1,list2))
+
+output:/excercise_3/practice_excercise_3
+$ python append_list_to_second_list.py
+['a', 'b', 'c', 1, 2, 3]
+.............................................................................................
+2(s)...#Write a Python program to select an item randomly from a list.
+import random
+num =[1,2,3,4,5,6,7,8,9]
+print("random 3 nors")
+sample_list=random.sample(num,3)
+print(sample_list)
+
+output:excercise_3/practice_excercise_3
+$ python select_random_item_from_list.py
+random 3 nors
+[2, 6, 8]
+.......................................................................................
+2(t)...# num1=[1,4,3]
+# num2=[3,1,4]
+# sum_1=sum(num1)
+# sum_2=sum(num2)
+# print(sum_1)
+# print(sum_2)
+# if sum_1==sum_2:
+#     print("list are identical")
+# else:
+#     print("list not identical")
+#-------------------------------------
+def iden(l1,l2):
+    sum_1=sum(l1)
+    sum_2=sum(l2)
+    if sum_1==sum_2:
+        print("list are identical")
+    else:
+        print("list not identical")
+num1=[1,4,3,6,7]
+num2=[3,1,4,7,6]
+iden(num1,num2)
+
+output:/excercise_3/practice_excercise_3
+$ python list_circularly_identical.py
+list are identical
+.................................................................................
+2(u)...#Write a Python program to find the second smallest number in a list
+def second_smallest_no(l):
+    length=len(l)
+    l.sort() #sort method sort the link ascending by default
+    print("largest no is:-",l[length-1])
+    print("second largest no is:-",l[length-2])
+    print("smallest no is:-",l[0])
+    print("second smallest no is:-",l[1])
+num=[10,20,4,89,70,3,2,1]
+second_smallest_no(num)
+
+output:/excercise_3/practice_excercise_3
+$ python find_second_smallest_no_from_list.py
+largest no is:- 89
+second largest no is:- 70
+smallest no is:- 1
+second smallest no is:- 2
+....................................................................................
+2(v)...#Write a Python program to get unique values from a list.
+def unique_value(l):
+    uni=[]
+    for i in l:
+        if i not in uni:
+            uni.append(i)
+    return uni
+num=[1,2,3,4,5,1,2]
+word=["a","bc","dc","p","a","bc"]
+print(unique_value(num))
+print(unique_value(word))
+
+output:excercise_3/practice_excercise_3
+$ python unique_values_in_list.py
+[1, 2, 3, 4, 5]
+['a', 'bc', 'dc', 'p']
+...........................................................................................
+2(w)...#Write a Python program to count the number of elements in a list within a specified range.
+def count_specified_range(l,s,e):
+    t=0
+    for i in l:
+        if i>=s and i<=e:
+            t=t+1
+    return t
+num=[2,4,5,7,8,9,10,20,30,40,60]
+s=8
+e=60
+print(count_specified_range(num,s,e))
+
+output:/excercise_3/practice_excercise_3
+$ python count_element_within_specified_range.py
+7
+..............................................................................................
+2(x)...

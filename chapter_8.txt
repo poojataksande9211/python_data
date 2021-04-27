@@ -1,0 +1,387 @@
+*****************TUPLES*******************
+
+1(a)...# tuple is a data structure
+# tuple can store any data type
+# most imp tuple are immutable...once tuple is created u cant update
+ex=("one","two","three")
+#tuples are faster than list
+print(ex[:2])
+#methods used in tuples(count,index,len func,slicing)
+
+output:/python_tutorial/excercise_4
+$ python tuple_intro.py
+('one', 'two')
+
+1(b)...More about tuples
+#looping in tuples
+mixed=(1,2,3,4,5,6,4.0)
+# for i in mixed:
+#     print(i)
+# i=0
+# while i<len(mixed):
+#     print(mixed[i])
+#     i=i+1
+#-------------------------
+#tuple with one element
+# mixed=(1,2,3,4,5,6,4.0)
+# print(type(mixed)) #shows tuple
+# num=(1)
+# word=("word")
+# print(type(num)) #shows int type not tuple
+# print(type(word)) #shows string type not tuple
+# num1=(1,)
+# print(type(num1))
+#------------------------------------------
+#tuple without paranthesis
+# fruits="banana","mosambi","apple","pinaple"
+# print(type(fruits))
+# num=1,2,3,4,5
+# print(type(num))
+#------------------------------------------
+#tuple unpacking
+# gitarist=("maneli jamal","ediee van re deer","andrew fay")
+# gitarist1,gitarist2,gitarist3=gitarist
+# print(gitarist1)
+#---------------------------------------------
+#list insight tuples
+# favoriets=("southern mangolia",["tokiyo gokul theme","landscape"])
+# favoriets[1].pop()
+# print(favoriets)
+# favoriets[1].append("we made it")
+# print(favoriets)
+#-------------------------------------------
+#func used in tuples
+num=(1,2,3,4,5,6,4.5)
+print(min(num))
+print(max(num))
+print(sum(num))
+
+output:/python_tutorial/excercise_4
+$ python more_about_tuple.py
+1
+6
+25.5
+...............................................................................................
+1(c)...#func return two values
+def func(int1,int2):
+    add=int1+int2
+    mult=int1*int2
+    return add,mult
+# print(func(2,3)) #return one tuple
+add,mult=func(2,3)
+print(add)
+print(mult)
+
+output:/python_tutorial/excercise_4
+$ python func_returning_two_values.py
+5
+6
+.........................................................................................
+1(d)...#range
+# num=tuple(range(1,11))
+# print(num)
+#------------------------
+num=list((1, 2, 3, 4, 5, 6, 7, 8, 9, 10)) #conert tuple to list
+print(num)
+num=str((1, 2, 3, 4, 5, 6, 7, 8, 9, 10)) #convert tuple to string
+print(num)
+print(type(num))
+num_list=str([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])#convert list to string
+print(num_list) #output just like list but it is string
+print(type(num_list))
+
+output:python_tutorial/excercise_4
+$ python range_in_tuple.py
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+<class 'str'>
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+<class 'str'>
+.........................................................................................
+1(e)...#tuple summury
+#tuples are immmutable
+#tuples are order collection of items
+#tuple can store any data type
+#u can not change values from tuple once it created
+#but u can add,delete data from list,which is present insite list
+# mixed=(1,2,3,4,5)
+# print(len(mixed))
+# print(min(mixed))
+# print(max(mixed))
+# print(sum(mixed))
+# print(mixed.index(5))
+#-------------------------------
+mixed1=(1,2,3,4,5,6,[7,8,9])
+mixed1[6].pop()
+print(mixed1)
+
+output:/python_tutorial/excercise_4
+$ python summury_tuple.py
+(1, 2, 3, 4, 5, 6, [7, 8])
+............................................................................................
+1(f)...# Write a Python program to create a tuple
+x=() #create an empty tuple
+print(x)
+tuplex=tuple() #create an empty tuple by using tuple() built in func in python
+print(tuplex)
+
+output:
+/python_tutorial/excercise_4
+$ python create_tuple.py
+()
+()
+.............................................................................................
+1(g)...#Write a Python program to create a tuple with different data types
+mixed=("pooja",True,4.45,23)
+print(mixed)
+
+output:/python_tutorial/excercise_4
+$ python create_tuple_with_diffrent_data_type.py
+('pooja', True, 4.45, 23)
+..................................................................................
+1(h)...# Write a Python program to create a tuple with numbers and print one item.
+# num=(1,2,3,4,5,6)
+# print(num[0])
+# print(num[2])
+#------------------
+num=1,2,3,4,5,6
+print(num)
+num=5
+print(num)
+
+output:python_tutorial/excercise_4
+$ python creat_tuple_num_with_one_item.py
+(1, 2, 3, 4, 5, 6)
+5
+...................................................................................
+1(i)...#Write a Python program to unpack a tuple in several variables. 
+# mixed=("pooja ganvir",True,45,"fruit")
+# mixed1,mixed2,mixed3,mixed4=mixed
+# print(mixed2)
+#----------------------------------
+num=1,2,3,4,5,4
+n1,n2,n3,n4,n5,n6=num
+print(n1+n2+n3+n4+n5+n6)
+
+output:python_tutorial/excercise_4
+$ python unpack_tuple_in_several_variable.py
+19
+.....................................................................................
+1(j)...#Write a Python program to add an item in a tuple.
+num=1,2,3,4,5,8,0,9
+print(num) #we can not add item to the tuple
+num=num+(9,) #by using merge of tuple +operator add item to the tuple
+print(num)
+#adding item in a specific index
+num=num[:5]+(10,20,30)+num[:5]
+print(num)
+listx=list(num)
+listx.append(30)
+print(listx)
+num=tuple(listx)
+print(num)
+
+output:/python_tutorial/excercise_4
+$ python  add_item_in_tuple.py
+(1, 2, 3, 4, 5, 8, 0, 9)
+(1, 2, 3, 4, 5, 8, 0, 9, 9)
+(1, 2, 3, 4, 5, 10, 20, 30, 1, 2, 3, 4, 5)
+[1, 2, 3, 4, 5, 10, 20, 30, 1, 2, 3, 4, 5, 30]
+(1, 2, 3, 4, 5, 10, 20, 30, 1, 2, 3, 4, 5, 30)
+.......................................................................................
+1(k)...#Write a Python program to convert a tuple to a string. 
+num=("1","2","3")
+str="".join(num)
+print(str)
+print(type(str))
+
+output:python_tutorial/excercise_4
+$ python convert_tuple_to_string.py
+123
+<class 'str'>
+..........................................................................................
+1(l)...#Write a Python program to get the 4th element and 4th element from last of a tuple.
+mixed=("a","b","c","d","e","f","g",6,"i","h","i","z")
+print(mixed[3]) #print 4rth element
+# c=mixed[3]
+# print(c)
+print(mixed[-4])
+
+output:python_tutorial/excercise_4
+$ python print_4rth_element_tuple.py
+d
+i
+...........................................................................................
+1(m)...#Write a Python program to create the colon of a tuple.
+from copy import deepcopy
+mixed=("pooja",1,2,3,[],"amit") #create a tuple
+print(mixed)
+mixed_colon=deepcopy(mixed) #make copy by using deepcopy func
+mixed_colon[4].append(70)
+print(mixed_colon)
+print(mixed)
+
+output:python_tutorial/excercise_4
+$ python colon.py
+('pooja', 1, 2, 3, [], 'amit')
+('pooja', 1, 2, 3, [70], 'amit')
+('pooja', 1, 2, 3, [], 'amit')
+.................................................................................................
+1(n)...# Write a Python program to find the repeated items of a tuple.
+# mixed=(1,2,3,3,2,4,5,6)
+# print(mixed)
+# count=mixed.count(3)
+# print(f"repeated item of 3 is::{count}")
+#-----------------------------------------------
+mixed=(1,2,3,3,2,4,5,6)
+for i in mixed:
+    if mixed.count(i)>1:
+        print(i,"repeated")
+    else:
+        print(i,"not repeated")
+
+output:e/python_tutorial/excercise_4
+$ python find_repeated_item.py
+1 not repeated
+2 repeated
+3 repeated
+3 repeated
+2 repeated
+4 not repeated
+5 not repeated
+6 not repeated
+................................................................................................
+1(o)...#Write a Python program to check whether an element exists within a tuple. 
+# mixed=(1,2,3,4,5,6,7,8)
+# print(mixed)
+# n=int(input("enter ele"))
+# if n in mixed:
+#     print(n,"exist")
+# else:
+#     print(n,"not exist")
+#------------------------
+mixed=(1,2,3,4,5,6,7,8,"pooja",4.0,"amit")
+print("pooja" in mixed)
+print(4 in mixed)
+print(0 in mixed)
+print(4.0 in mixed)
+
+output:python_tutorial/excercise_4
+$ python element_exist_within_a_tuple.py
+True
+True
+False
+True
+..............................................................................................
+1(p)...#Write a Python program to convert a list to a tuple
+mixed=[1,2,3,4,5]
+print(mixed)
+mixed=tuple(mixed)
+print(mixed)
+print(type(mixed))
+
+output:python_tutorial/excercise_4
+$ python convert_list_to_tuple.py
+[1, 2, 3, 4, 5]
+(1, 2, 3, 4, 5)
+<class 'tuple'>
+...........................................................................................
+1(q)...#Write a Python program to remove an item from a tuple
+mixed=(1,2,3,4,5,6,"a","b",7) 
+print(mixed)
+mixed=mixed[:3]+mixed[4:]#tuples are immutable hence we can not remove...use merge operator create new tuple 
+print(mixed)
+listx=list(mixed) 
+listx.remove(5)
+listx=tuple(listx)
+print(listx)
+
+output:python_tutorial/excercise_4
+$ python remove_an_item_from_tuple.py
+(1, 2, 3, 4, 5, 6, 'a', 'b', 7)
+(1, 2, 3, 5, 6, 'a', 'b', 7)
+(1, 2, 3, 6, 'a', 'b', 7)
+.....................................................................................
+1(r)...#Write a Python program to slice a tuple. 
+mixed=("a","b","c","d",'e',1,1,2,3,4,6)
+print(mixed)
+print(mixed[:5])
+tuplex=tuple("POOJA GANVIR")
+print(tuplex[2:9])
+print(tuplex[2::2])
+
+output:python_tutorial/excercise_4
+$ python slice_tuple.py
+('a', 'b', 'c', 'd', 'e', 1, 1, 2, 3, 4, 6)
+('a', 'b', 'c', 'd', 'e')
+('O', 'J', 'A', ' ', 'G', 'A', 'N')
+('O', 'A', 'G', 'N', 'I')
+........................................................................................
+1(s)...#Write a Python program to find the index of an item of a tuple.
+# def tup(t):
+#         return t.index(3)
+# t=(1,2,3,4,5,6,6)
+# print(tup(t))
+#---------------------
+# tup=(1,2,3,4,5,"pooja","amit","nau")
+# print(tup.index("pooja"))
+#----------------------
+tup=tuple("index tuple")
+print(tup)
+print(tup.index("p"))
+print(tup.index(" "))
+print(tup.index("e",4)) #find last e
+
+output:python_tutorial/excercise_4
+$ python find_index_of_item_of_tuple.py
+('i', 'n', 'd', 'e', 'x', ' ', 't', 'u', 'p', 'l', 'e')
+8
+5
+10
+.................................................................................................
+1(t)...#Write a Python program to find the length of a tuple. 
+tup=tuple("pooja ganvir")
+print(len(tup))
+tup=(1,2,3,4,5,6,"pooja","amit")
+print(len(tup))
+
+output:python_tutorial/excercise_4
+$ python find_length_of_tuple.py
+12
+8
+.............................................................................
+1(u)...#Write a Python program to unzip a list of tuples into individual lists.
+l=[(1,2),(3,4),(5,6)]
+print(list((zip(*l))))
+
+output:python_tutorial/excercise_4
+$ python unzip_list_of_tuple_to_individual_list.py
+[(1, 3, 5), (2, 4, 6)]
+..................................................................................
+1(v)...#Write a Python program to reverse a tuple. 
+tup=(1,2,3,4,5,6)
+rev=tup[::-1]
+print(rev)
+tup=tuple("pooja ganvir")
+rev=tup[::-1]
+print(rev)
+#--------------
+# tup=("pooja") #string
+# print(type(tup))
+# tup=("pooja",) #tuple
+# print(type(tup))
+
+outpt:/python_tutorial/excercise_4
+$ python rev_tuple.py
+(6, 5, 4, 3, 2, 1)
+('r', 'i', 'v', 'n', 'a', 'g', ' ', 'a', 'j', 'o', 'o', 'p')
+....................................................................................
+1(w)...#Write a Python program to print a tuple with string formatting
+tup=(100,200,300)
+print(f"this is a tuple {tup}")
+
+output:python_tutorial/excercise_4
+$ python print_tuple_with_string_formating.py
+this is a tuple (10, 20, 30)
+......................................................................................
+1(x)...

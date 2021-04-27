@@ -1,0 +1,119 @@
+1......VARIABLE (by using variable we can store the any type of data type i.e (string,integer,data structure))
+
+number=2 #(number is a variable and we can change the value of variable)
+>print (number)
+2
+number=4
+>print (number)
+4
+name="pooja" #(double quote or single quote is mandatory bcz pooja is string)
+>print (name)
+pooja
+name=123   #(this is called as dynamic programming bcz no need to define variable as int or sring)
+>print (name)
+
+1(a).....variable rule
+ 1.. variable can not start with no
+ name=2
+ na2me=3
+ name1=4
+ 2..variable can start with any letter or _ (underscore)
+ _name=pooja
+>print (_name)
+ 3..we can not use special symbol in variable
+
+1(b)......Naming conventions(recommendation) for variables
+useronename="pooja" #(in variable no of letter presents hence use snake case writing)
+user_one_name="pooja" #(snake case writing use in python)
+userOneName="pooja" #(camel case writing used in java)
+
+
+
+2......string(collection of character under single quote or double quote)
+concatination:=means joining two strings
+>first_name=pooja
+>last_name=ganvir
+>full_name= first_name + " " + last_name #(either u can give space to pooja)
+>print (full_name)
+pooja ganvir
+
+2(a)
+> print (first_name + 3) #(this will give an error string can be add with string)
+error
+
+>print (first_name +"3")
+pooja3
+
+>print (first_name + " " + str(3)) #(by using string function)
+pooja 3
+
+>print(first_name * 3) #(string can be multiply with no
+poojapoojapooja
+
+2(a).......input function(the input function allows user input)
+input function alwas consider as string
+
+>name=input("enter your name:=")
+>age=input("enter your age ?")
+# age="24"
+>print("name=" + name + " " + "age=" + age)
+
+output:
+name=pooja age=24
+
+
+
+2(b).......
+
+>number_1= int(input("enter first no")) #(input function as asring input lega hence the add of 4 and 4 is 44 )
+>number_2= int(input("enter second no"))
+> total=number_1 + number_2
+>print ("total:= " + str(total)) #(its give an error without str func)
+
+output:
+enter first no 5
+enter second no 4
+total=9
+
+str:4------>"4"
+
+int:"4"----->4
+
+float:4----->4.0
+
+2(c)............addition of float ant int
+>number_1=str(4)
+>number_2=float(40)
+>number_3=int(30)
+# print (number_2 + number_3)
+>result=number_2 + number_3
+>print("result=" + str(result))
+
+result=70.0
+
+
+2(d).....initializing more than one variable
+>name,age="pooja", "24"  #(cant write age =24 bcz can not concatinate string with no)
+>print ("name=" +name + " " + "age=" + age)
+x=y=z=1
+print(x+y+z)
+
+output:name=pooja age=age
+3
+
+
+2(a)....two or more input in one line
+
+>name,age=input("enter name and age").split()
+>print(name)
+>print(age)
+output:enter name and age pooja 23
+pooja 
+23
+#suppose we want to seperate input by comma then write comma in split
+>name,age=input("enter name and age").split(",")
+>print(name)
+>print(age)
+output:enter name and age pooja,23
+pooja
+23

@@ -1,0 +1,182 @@
+3.....string formatting
+>name="pooja"
+>age=23
+># print("name is:" + name + "age is:" + str(age)) #(to avoid + sign use string formatting)
+># print ("name is {} age is {}".format(name,age) ) #(python 3 string format)
+
+>print (f"name is: {name} age is: {age}") #(python 3.6 string format)
+
+3(a).......write a program to find the avg of 3 numbers by using string formating 
+
+>n1,n2,n3=input("enter 3 no by comma seperated").split(",") #111
+> print(f"avg is {(int(n1) + int(n2) + int(n3)) / 3}")
+#--------------------------..............
+> n1=int(input("enter 1st no")) #22222
+> n2=int(input("enter 2nd no"))
+> n3=int(input("enter 3rd no"))
+> avg=(n1+n2+n3)//3
+> print (avg)
+# ..........................................................................
+> n1=input("enter 1st no") #333333
+> n2=input("enter 2nd no")
+> n3=input("enter 3rd no")
+> print(f"avg is {(int(n1) + int(n2) + int(n3))/ 3}")
+#....................................................
+>n1,n2,n3=map(int,input("enter 3 no by comma seperated").split(",")) #4444444
+>avg=(n1+n2+n3)/3
+>print (f"avg is: {avg}")
+
+3(b)......string indexing
+
+#string indexing
+>language="python"  #position means index number
+# p=0,-6
+# y=1,-5
+# t=2,-4
+# h=3,-3
+# o=4,-2
+# n=5,-1
+>print(language[0]) #square bracket[] is use for index number
+>print(language[5])
+>print (language[-1]) #suppose we want to print last character and we did not know th string -1 is use
+
+output: p
+n
+n
+
+3(c)......string slicing
+#string slicing  #(string slicing is used when we want to print more than 1 character)
+#syntax=[start argument:stop argument]
+>lang="python"
+>print(lang[0:3]) #(suppose we want to print pyt then stop argument(2) add +1 means 3 )
+>print(lang[1:7])
+>print (lang[:])   #(suppose we dont want to write start argument and stop argument then it will print full string)
+>print (lang[1:]) #(i give start argument and not giving stop argument then it will print from start argument up to n)
+>print (lang[:4]) #(suppose we want to give only stop argument then it will count start argument automaticaly from 0 to 3)
+
+output:pyt
+ython
+python
+ython
+pyth
+
+
+3(d).......step argument
+
+#syntax [start argument:stop argument:step argument]
+lang="python"
+>print ("pooja" [1:3])
+>print ("harshit" [1:5:1]) #(it will print full string starting from a to h)
+>print ("harshit" [0:5:2]) #(it will print character after 2 step)
+>print (lang[0:6:3])
+>print("sudhakar" [1:8:3])
+>print ("harshit" [0::2]) #(stop argumentbis not given)
+>print ("harshit" [::3])
+>print ("mangala" [5::-1])  #(start argument from 5 means l...-1 is for reverse step argument)
+>print ("rajashree" [-1::-1]) #(start argument with -1 means last no of string with reverse 1 step)
+>print ("rajashree" [-1::-2])
+
+output:
+yt
+arsh
+hrh
+ph
+uar     ;;vvvb
+
+
+hrht
+hst
+lagnam
+eerhsajar
+.........................................
+3(e)....reverse of string
+#ask user name and print back user name in reverse order
+>name=input("enter your name")
+>print(name[::-1])
+#or
+>name=input("enter your name")
+>reverse=name[-1::-1]
+>print(f"reverse of string {reverse}")
+output:enter your name 
+pooja
+ajoop
+
+3...(f)..len function
+
+>name="PoOjA GanViR"
+># print (len(name)) # (len function is use for the count character of string)>
+or
+>print (len("pooja"))
+>name ="pooja ganvir" #(it count space )
+>ab=len(name)
+>print (f"Count is: {ab}")
+output:12 mm; 
+5
+.......................................
+3...(g)..... lowercase method
+
+>name="POOja GaNVir"
+># abc=name.lower()
+># print(f"lowercase: {abc}")
+>print(name.lower())
+>print(f"lowercase letter:{name.lower()}")
+output:
+pooja ganvir
+..............................
+3(h)....uppercase method
+>name="PooJa Ganvir"
+># print(f"lowecase letter: {name.upper()}")
+>#abc=name.upper()
+># print(abc)
+># print(name.upper())
+>print (f"upper case: {name.upper()}")
+output:POOJA GANVIR
+............................
+
+3(i)........Title method
+>name="pooJA gANVir"
+># print(name.title()) #(title method convert the first character in capital letter and rest is small case letter)
+>abc=name.title()
+>print(f"name is: {abc}")
+output:
+Pooja Ganvir
+.......................
+3(j).....count method
+>name="Pooja ganviR"
+># print(name.count("a")) #(count method is use to count specific character of a string)
+>abc=name.count("o")
+>print(f"character count: {abc}")
+output:
+2
+...........................
+3(k)......write a program to count string lenth and enter character insensitive count
+with user input by name and charecter seperated by comma
+
+>name,char=input("enter name and single character seperated by comma").split(",")
+>print(len(name))
+># print(f"insensitive count is: {name.lower().count(char.lower())}") #(this will not work during execution time when user enter space after comma)
+>print(f" insensitive count : {name.strip().lower().count(char.strip().lower())}")
+># char.strip().lower()
+
+output:enter name and character seperated by comma PoOja, O
+5
+insensitive count is:2
+......................................
+3(l)...strip methods
+
+#strip method is use for to remove right and left spaces
+>name="   pooja    " 
+>dot=".........."
+>print(f" {name} {dot}")
+#or
+>print(name.lstrip() + dot) #(lstrip remove only left space)
+>print(name.rstrip() + dot) #(rstrip remove right space)
+>print(name.strip() + dot) #(strip remove right and left spaces) 
+#.................
+>name1="Ami   taaaa" #(strip can not remove the spaces between variable)
+>print(name1.replace(" ","t") + dot) #(riableeplace method use for to remove spaces between var)
+output:
+     pooja   .........
+pooja   .......
+pooja......
+Amitaaaa

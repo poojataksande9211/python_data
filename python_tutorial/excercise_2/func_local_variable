@@ -1,0 +1,6 @@
+#co_nlocals() function which returns the number of local variables
+def add():
+    x=3
+    y=2
+    str="pooja ganvir"
+print(add.__code__.co_nlocals)

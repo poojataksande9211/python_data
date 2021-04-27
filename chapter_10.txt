@@ -1,0 +1,72 @@
+1(a)...#what is set:unordered collecton of unique items,we can not store list,tuple,dictionary in set
+s={1,2,3,4,3,3} #repeated value count only at once
+print(s)#in set there is no key value
+#-----------------------
+#suppose we want to replace unique item in list use set method
+l=[1,2,3,4,5,6,4,4,4,5,6,4,8,9,2]
+# sa=set(l)
+sa=list(set(l))
+print(sa)
+#----------
+#add data to set
+s1={1,2,3,4,5}
+s1.add(6)
+s1.add(7)
+s1.add(6)
+print(s1)
+# remove method
+s1.remove(4)
+print(s1)
+#clear() method
+# s1.clear()
+# print(s1)
+#copy method
+s1_copy=s1.copy()
+print(s1_copy)
+#----------------
+s2={1,1.0,2.9,"pooja","AMIT"}#1.0 not print bcoz 1.0 treat as 1
+print(s2)
+
+output:/python_tutorial/excercise_6_sets
+$ python set_intro.py
+{1, 2, 3, 4}
+[1, 2, 3, 4, 5, 6, 8, 9]
+{1, 2, 3, 4, 5, 6, 7}
+{1, 2, 3, 5, 6, 7}
+{1, 2, 3, 5, 6, 7}
+{'pooja', 1, 'AMIT', 2.9}
+..............................................................
+1(b)...#more about python
+s={1,2,3,4,5,6}
+#check if item present in set or not
+if 1 in s:
+    print("present")
+else:
+    print("not present")
+#-----------------------
+for i in s:
+    print(i)
+#---------------------
+#remove duplicate data from tuple
+sa=(1,2,3,2,4,5)
+print(type(sa))
+sa=set(sa)
+print(sa)
+#---------------------
+#set math
+s2={1,2,3,4}
+s3={2,3,7,8}
+#union
+s2_s3_union=s2 |s3
+print(s2_s3_union)
+#intersection #count common value
+s2_s3_intersection=s2 & s3
+print(s2_s3_intersection)
+
+output:/python_tutorial/excercise_6_sets
+python more_about_set.py
+<class 'tuple'>
+{1, 2, 3, 4, 5}
+{1, 2, 3, 4, 7, 8}
+{2, 3}
+...............................................................................

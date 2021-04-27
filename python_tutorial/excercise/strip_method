@@ -1,0 +1,11 @@
+#strip method is use for to remove right and left spaces
+name="   pooja    " 
+dot=".........."
+print(f" {name} {dot}")
+#or
+print(name.lstrip() + dot) #(lstrip remove only left space)
+print(name.rstrip() + dot) #(rstrip remove right space)
+print(name.strip() + dot) #(strip remove right and left spaces) 
+#.................
+name1="Ami   taaaa" #(strip can not remove the spaces between variable)
+print(name1.replace(" ","t") + dot) #(riableeplace method use for to remove spaces between var)

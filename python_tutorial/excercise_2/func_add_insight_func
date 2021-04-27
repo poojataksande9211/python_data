@@ -1,0 +1,7 @@
+#addition of 3 no usin function insigtht function
+def add(a,b):
+    return a+b
+def add_new(a,b,c):
+    sum=add(a,b)+c
+    return sum
+print(add_new(30,20,12))

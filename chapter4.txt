@@ -1,0 +1,226 @@
+1(a)....find and replace method
+replace method
+
+>name="she is so beautiful and she is good dancer"
+>print(name.replace(" ","")) #(in  this replace spaces with no spaces)
+>print(name.replace(" ","_")) #(in this replace spaces with underscore)
+>print(name.replace("she","he")) #(in this replace she alphabet with he alphabet)
+>print(name.replace("is","was"))
+>print(name.replace("is","was",1)) #(only replace 1st is with was)
+>print(name.replace("is","was",2)) #(replace both 2  is with was) 
+>print(name.replace("is","was",3)) #(replace both 2  is with was) 
+
+output:
+sheissobeautifulandsheisgooddancer
+she_is_so_beautiful_and_she_is_good_dancer
+he is so beautiful and he is good dancer
+she was so beautiful and she was good dancer
+she was so beautiful and she is good dancer
+she was so beautiful and she was good dancer
+she was so beautiful and she was good dancer
+...............................................
+1(b).......find method
+#.......find method->use to find out the position of character and word in a string
+>name="she is more beautiful nd she is good dancer"
+>print(name.find("is")) #(find the 1st position of is)
+>print(name.find("is",5)) #(suppose we dont know the 1st and second position of is so find out first position byusing above and then find out second position)
+#we want to find the second position of is ande we dont know the 1st position of is....write a program
+>is_pos1=name.find("is")
+>is_pos2=name.find("is",is_pos1+1)
+>print (is_pos2)
+
+output:
+4
+29
+29
+..............................................
+i(b)
+**pooja ganvir** 
+
+>string=input("enter string")
+>print(len(string))
+>print(string.center(len(string)+4,"*"))
+output:**pooja ganvir**
+.............................................
+
+1(c).....strings are immutable
+#immutable string:=we can not change the origional string
+>string="string"
+>print(string[1])
+# string[1]='T' #(we can not change the character of string it will give an error)
+# print(string.replace('t','T')) #(replace method can not change the origional string it will create a new string)
+>string.replace('t','T')
+>print(string) #(replace can not chagne origional string)
+#.....................
+>new_string=string.replace('t','T')
+>print(new_string)     
+
+output:       
+
+python imuutable_string.py
+t
+string
+sTring
+.............................
+1(d)........assignment operator
+
+>name="pooja" #(suppose we want to add ji)
+># name=name + "ji"
+># print(name)
+#..................
+>name += "ji"
+>print(name)
+>age=23
+># age=age + 1
+># print(age)
+># age += 1 
+># print(age)
+># age -=2
+># print(age)
+>age *=2
+>print (age)
+
+output:python assignment_operater.py
+poojaji
+46
+...................................
+1(e)....if statement
+
+>age=input("enter your age?")
+>age=int(age)
+>if age >= 14: #(condition is true then it will execute if block)
+  print("you are eligible bcoz u are abov 14")
+  
+output:python if_statement.py
+enter your age?14
+you are eligible bcoz u are abov 14   
+.......................................
+1(f).....pass statement
+>age=18
+>if age >= 18:
+      #(we dont want to write anything in the block then use pass statement)
+      >pass #(without pass statement it will give an error)        
+..........................
+
+1(g)...if else statement
+>age=input("enter your age?")
+>age=int(age)
+>if age >= 14: #(if block execute when if statement is true)
+    print("you are above 14")
+    print("you are eligible for game")
+>else:   #(else block is execute when if statement is false)
+    print("you are below 14")
+    print("you are not eligible for game")
+ 
+output: python if_else_statement.py
+enter your age?13
+you are below 14
+you are not eligible for game
+....................................
+1(h)...nested if else
+
+winning_num=5
+guess_num=input("guess a no")
+guess_num=int(guess_num)
+if winning_num == guess_num:
+    print("u guess no correctly means u win")
+elif guess_num < winning_num:
+    print("too low")
+else:
+    print("too high")      
+
+output: python winning_game_if_else.py
+guess a no55
+too high
+......................................               
+1(i)...and
+>name="pooja"
+>age=19
+>if name == "pooj" and age == 19: #(it requires both the conditions are true)
+    print("condition is true")
+>else:
+    print("condition is false")    
+ 
+output: python and.py
+condition is true
+......................................
+1(j)......or
+name="abcdf"
+age=12
+if name=="abcdf" or age==14: #(one condition is true then it will print condition is true)
+    print("condition is true")
+else:
+    print("condition is false")
+
+output:python or.py
+condition is true
+..............................
+1(k)...write a program to watch movie or not
+name starting with "a" OR "A"and age more than 10 can watch the coco movie
+>user_name=input("enter your name?")
+>user_age=input("enter your age?")
+>user_age=int(user_age)
+>if (user_name[0] == "a" or user_name[0] == "A") and user_age >=10:
+    print("u can watch movie")
+>else:
+    print("sorry u cant watch movie")
+
+ output:python watch_coco.py
+enter your name?Aarati
+enter your age?11
+u can watch movie
+..................................
+1(l).... if elif else
+
+#if elif else used when we want to check multiple conditions
+age=input("enter your age :")
+age=int(age)
+if age <=1:
+    print ("u cant watch movie")
+elif age >1 and age <=3:
+    print (" ticket is free")
+# elif age >3 and age <= 10:
+# elif age >3<=10:
+elif 3<age<=10:
+    print("ticket price is 150")
+elif age >10 and age <=60:
+    print("ticket price is 250")
+else:
+    print("ticket price is 300")
+
+output: python if_elif_else.py
+enter your age :61
+ticket price is 300   
+.................................
+1(m)....in keyword
+
+#(in keyword is use to search perticular character in string )
+name="raniukey"
+if "i" in name:
+    print ("i is present")
+else:
+    print("i is not present")     
+output: i is present
+.................................
+1(n)....#check empty or not
+
+>name="abc"
+>if name:
+    print ("string is not empty")
+>else:
+    print("string is empty")
+
+output:python string_empty.py
+string is not empty
+----------------------------
+>name=input("enter your name :")
+if name:
+    print(f"you type your name is {name}")
+else:
+    print("you didnt type your name")
+
+output:python string_empty.py
+enter your name :
+you didnt type your name
+.............................
+                                                                                                                     

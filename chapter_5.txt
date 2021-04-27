@@ -1,0 +1,339 @@
+1(a)...LOOP
+#when we have to repeate program no of times then use loop
+
+#while loop
+#print hello world 10 times
+i=1
+while i<=10:
+    print (f"hello world {i}")
+    i=i+1
+output:python while_loop.py
+hello world 1
+hello world 2
+hello world 3
+hello world 4
+hello world 5
+hello world 6
+hello world 7
+hello world 8
+hello world 9
+hello world 10
+..........................
+1(b)....write a program to sum 10 no from 1 to 10 using while loop
+#sum of 10 no from 1 to 10 using while loop
+>i=1
+j=0
+while i <=10:
+    # j=j+i
+    j += i
+    # i=i+1
+    i += 1
+print(f"sum = {j}")
+output:
+55
+................................
+1(c)
+#write a program to aad no from 1 to input given by user 
+n=input("plz enter how many no for addition")
+n=int(n)
+i=1
+total=0
+while i<=n:
+    total += i
+    i += 1 
+print(total)
+ouput:python sum_n_natural_no.py
+plz enter how many no for addition 5
+15
+........................
+1(d)....write a program to print addition of more than 1 digit(eg..enter num 1234=1+2+3+4)
+num=input("enter number")
+i=0
+total=0
+# while i < int(num[-1]): #(-1 means last digit of string)
+while i < len(num):
+    total=total + int(num[i])
+    i=i+1
+print(total)
+
+output:python ip_more_than_one_digit_addition.py
+enter number12345
+15
+............................................
+1(e)....write a program to count string character(eg enter pooja p=1,o=2,0=2,j=1,a=1)
+name=input("enter name")
+i=0
+while i< len(name):
+    print(f"{name[i]}:{name.count(name[i])}")
+    i=i+1
+
+output:python ip_char_count_full_string.py
+enter namepoooja
+p:1
+o:3
+o:3
+o:3
+j:1
+a:1
+.............................
+1(f)......infinight loop
+#infinite loop
+# i=0     #infinite loop by mistske
+# while i<=10:
+#     print("hellow amata")
+# #.............................
+while True: #True is boolean
+     print("pooja ganvir")
+output:
+pooja ganvir
+||
+||
+||
+...........................
+1(g)....for loop
+# for i in range(10): #range 10 means (0 to 9)=(0<10)
+#    print(f"pooja ganvir:{i}")
+# for i in range(1,10):
+#     print(f"hello world: {i}") #range 1 to 
+for i in range (0,11): #range 0 to 10
+    print(f"pooja: {i}")
+
+output:python for.py
+pooja: 0
+pooja: 1
+pooja: 2
+pooja: 3
+pooja: 4
+pooja: 5
+pooja: 6
+pooja: 7
+pooja: 8
+pooja: 9
+..............................
+1(h)....write a program for addition of 10 num
+# sum=0
+# for i in range(1,11):
+#     sum=sum + i
+# print(f"sum:{sum}")
+total=0
+no=input("enter no")
+no=int(no)
+for i in range(1,no+1):
+   total=total+ i
+print(f"total= {total}")
+
+output:python sum_for_10.py
+enter no10
+total= 55
+..................................
+1(i)......addition of no (same row)
+
+no=input("enter no")
+total=0
+# for i in range(len(no)):
+for i in range(0,len(no)):
+    total= total +int(no[i])
+print(total)
+
+output:python add_for_row_digit.py
+enter no1234
+10
+........................................
+1(j).......write a program to count string character(eg enter pooja p=1,o=2,0=2,j=1,a=1)
+
+name=input("enter name")
+temp=""
+for i in range (len(name)):
+   if name[i] not in temp:
+    print(f"{name[i]}:{name.count(name[i])}")
+    temp=temp+ name[i]
+
+output:python ip_for_char_count_string.py
+enter namepooja
+p:1
+o:2
+j:1
+a:1
+....................................................
+1(k).....break
+for i in range (1,11):
+    if i==5:
+        break
+    print(i)
+output:python break.py
+1
+2
+3
+4
+................................................
+1(l).....continue
+#print no 1  to 10 but not 5 then use continue (1,2,3,4,6,7,8,9,10)
+for i in range(1,11):
+    if i==5:
+        continue
+    print(i)
+
+output:python continue.py
+1
+2
+3
+4
+6
+7
+8
+9
+10
+..............................................
+1(m).....winnig no gessing no
+# win_num=45
+import random
+win_num=random.randint(1,100)
+guess=1
+guess_num=input("enter a no between 1 to 100")
+guess_num=int(guess_num)
+game_over=False
+while not game_over:
+    if guess_num == win_num:
+        print(f"YOU WIN,and you guess a no in {guess} times")
+        game_over=True
+        
+    else:
+        if guess_num <win_num:
+            print("TOO LOW")
+            guess=guess+1
+            guess_num=int(input("AGAIN enter no"))
+        else: 
+            print("TOO HHIG")
+            guess=guess+1
+            guess_num=int(input("AGAIN enter no"))
+
+output:python winning_random_guessing_game.py
+enter a no between 1 to 10040
+TOO HHIG
+AGAIN enter no30
+TOO HHIG
+AGAIN enter no20
+TOO HHIG
+AGAIN enter no10
+TOO HHIG
+AGAIN enter no9
+YOU WIN,and you guess a no in 5 times
+..............................................
+1(n)....DRY principle of coding
+# win_num=45
+import random
+win_num=random.randint(1,100)
+guess=1
+guess_num=input("enter a no between 1 to 100")
+guess_num=int(guess_num)
+game_over=False
+while not game_over:
+    if guess_num == win_num:
+        print(f"YOU WIN,and you guess a no in {guess} times")
+        game_over=True
+        
+    else:
+        if guess_num <win_num:
+            print("TOO LOW")
+            
+        else: 
+            print("TOO HHIG")
+        guess=guess+1
+        guess_num=int(input("AGAIN enter no")) #(no need to write both the statement in if else block )
+
+output:python winning_random_guessing_game1.py
+enter a no between 1 to 10055
+TOO LOW
+AGAIN enter no88
+TOO HHIG
+AGAIN enter no77
+TOO HHIG
+AGAIN enter no66
+TOO HHIG
+AGAIN enter no60
+YOU WIN,and you guess a no in 5 times
+
+.........................
+1(o)...# win_num=45
+import random
+win_num=random.randint(1,100)
+guess=1
+guess_num=input("enter a no between 1 to 100")
+guess_num=int(guess_num)
+game_over=False
+while True:
+    if guess_num == win_num:
+        print(f"YOU WIN,and you guess a no in {guess} times")
+        break
+        
+    else:
+        if guess_num <win_num:
+            print("TOO LOW")
+            
+        else: 
+            print("TOO HHIG")
+        guess=guess+1
+        guess_num=int(input("AGAIN enter no")) #(no need to write both the statement in if else block )
+
+output:python winning_random_guessing_game2.py
+enter a no between 1 to 10055
+TOO HHIG
+AGAIN enter no44
+TOO HHIG
+AGAIN enter no33
+TOO LOW
+AGAIN enter no35
+TOO LOW
+AGAIN enter no39
+TOO LOW
+AGAIN enter no40
+YOU WIN,and you guess a no in 6 times
+...............................................
+1(p)......step argument in range function
+# for i in range(1,11,2): #(start argument,)
+    # print(i)
+# for i in range(0,11):
+#     print(i)
+# for i in range(0,11,2): #(program to print even no)
+#     print(i)
+# for i in range(1,11,2): #(program to print even no from 1 to 10)
+#     print(i)
+# for i in range(10,0,-1): #(program to print reverse from 10 to 1)
+#     print(i)
+for i in range(10,0,-2): #(program to print reverse from 10 to 1)
+    print(i)
+.......................
+1(q)...how to print all character of string using for loop
+name="harshit"
+for i in range(len(name)):
+    print(name[i],i)
+#..................
+# string="harshit"
+# for i in string:
+#     print(i)
+#....................
+for i in "harshit":
+    print(i)
+
+output:
+python char_print_string_for.py
+h 0
+a 1
+r 2
+s 3
+h 4
+i 5
+t 6
+..............................
+1(r).....addition 123=1+2+3
+num=input("enter num")
+total=0
+for i in num:
+    total=total + int(i)
+print(total)
+
+output:
+python char_print_string_for.py
+enter num1234
+10
+.........................
